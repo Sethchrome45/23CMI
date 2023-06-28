@@ -1,0 +1,68 @@
+    #Main-Splash {
+        background-image: url('Images/flint.png');
+        margin-top: -40px;
+        height: 110px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    
+    header h1 {
+        font-family: 'Nunito', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 3em;
+        font-stretch: expanded;
+        padding-top: 55px;
+        animation: mystretch 3s forwards;
+    }
+    
+    @keyframes mystretch {
+        to {
+            letter-spacing: 0.2em;
+        }
+    }
+    
+    .navbar a:hover {
+        background-color: white;
+        color: black;
+        cursor: default;
+    }
+    
+    .navbar {
+        background-color: gray;
+        height: 25px;
+        margin: -10PX;
+        margin-top: -1px;
+    }
+    
+    .navbar a {
+        font-family: 'Nunito', sans-serif;
+        text-decoration: solid;
+        color: white;
+        font-size: 1.3em;
+        text-align: center;
+        margin-bottom: 5px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    
+    .navbar #Dent {
+        position: relative;
+        margin-left: 30%;
+    }
+    
+    .navbar #DentEnd {
+        position: relative;
+        margin-right: 10%;
+    }
+    
+    #Col2022,
+    #def2022 {
+        position: absolute;
+        margin-top: 20px;
+    }
+    
+    #def2022 {
+        position: absolute;
+        margin-LEFT: 15%;
+    }

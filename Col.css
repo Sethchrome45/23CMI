@@ -1,0 +1,80 @@
+    #welcome {
+        margin: auto;
+        margin-top: 60px;
+        text-align: center;
+        font-size: 2em;
+        font-family: 'Nunito', sans-serif;
+        color: rgb(0, 170, 204);
+        text-shadow: rgb(79, 79, 79) 5px 1px 10px;
+        /*animation-name: welcome;
+        animation-duration: 1.5s;*/
+    }
+    
+    @keyframes welcome {
+        from {
+            margin-top: -10px;
+            color: rgb(255, 255, 255);
+            text-shadow: rgb(255, 255, 255) 5px 1px 10px;
+        }
+        to {
+            margin-top: 60px;
+            color: rgb(0, 170, 204);
+        }
+    }
+    
+    #Col-charts {
+        position: absolute;
+        top: 250px;
+        width: 100%;
+        height: 300px;
+        margin-left: 8%;
+    }
+    
+    #Col-prob {
+        position: relative;
+        margin-left: 21%;
+        top: -250px;
+        width: fit-content;
+    }
+    
+    #Col-report {
+        position: relative;
+        margin-left: 9%;
+    }
+    
+    #Col-entry,
+    #Col-report {
+        position: absolute;
+        top: 810px;
+        padding: 10px 25px;
+        font-family: 'Nunito', sans-serif;
+        background-color: white;
+        border: 1px solid rgb(8, 152, 205);
+        font-size: 1em;
+        border-radius: 2px;
+        margin-left: 9%;
+    }
+    
+    #Col-entry:hover,
+    #Col-report:hover {
+        background-color: rgb(8, 152, 205);
+        color: white;
+    }
+    
+    #Col-report {
+        margin-left: 51%;
+    }
+    
+    #Col-entry {
+        margin-left: 42%;
+    }
+    
+    #Col-probLW,
+    #Col-DELW {
+        position: absolute;
+        top: 270px;
+    }
+    
+    #Col-probLW {
+        margin-left: 21%;
+    }

@@ -1,0 +1,546 @@
+    #Entry-form {
+    Position: relative;
+    margin: auto;
+    margin-top: 30px;
+    width: 650PX;
+    height: auto;
+    font-family: 'Hind Madurai', sans-serif;
+    text-align: center;
+}
+
+#colMenu {
+    background-color: white;
+    color: black;
+}
+
+#formulaNum {
+    position: inherit;
+    font-size: 2em;
+    padding: 0px;
+    margin-top: -8px;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+}
+
+#Customer {
+    position: inherit;
+    margin-top: -55px;
+    margin-left: 70%;
+}
+
+#specName,
+#ColorNamelb,
+#JobNumlb,
+#ColResetlb,
+#FirstPulllb,
+#NoRunslb {
+    position: absolute;
+    margin-top: -35px;
+    font-size: 0.7em;
+}
+
+#specName {
+    margin-left: -48%;
+}
+
+#JobNumlb {
+    margin-left: -38%;
+}
+
+#ColorNamelb {
+    margin-left: -20%;
+}
+
+#FirstPulllb {
+    margin-left: 21.5%;
+}
+
+#ColResetlb {
+    margin-left: 41%;
+}
+
+#NoRunslb {
+    margin-left: 32%;
+}
+
+#spec,
+#JobNum,
+#ColorName,
+#FirstPull {
+    margin-top: -22px;
+}
+
+#spec {
+    position: absolute;
+    width: 50px;
+    margin-left: -49%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#JobNum {
+    position: absolute;
+    width: 70px;
+    margin-left: -39%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#ColorName {
+    position: absolute;
+    width: 280px;
+    margin-left: -25%;
+}
+
+#FirstPull {
+    position: absolute;
+    width: 45px;
+    margin-top: -66px;
+    margin-left: 20.8%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#NoRuns {
+    position: absolute;
+    width: 40px;
+    margin-left: 30%;
+    margin-top: -66px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#ColReset {
+    position: absolute;
+    width: 40px;
+    margin-left: 40%;
+    margin-top: -66px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#Avglb {
+    position: absolute;
+    margin-left: -48%;
+    margin-top: -8%;
+    font-size: 0.8em;
+}
+
+#Avg {
+    position: absolute;
+    width: 180px;
+    margin-left: -48.9%;
+    margin-top: -36px;
+    text-align: center;
+    font-weight: bold;
+    width: 165px;
+}
+
+#RunDate {
+    position: absolute;
+    margin-left: -20.5%;
+    margin-top: -5.5%;
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: bold;
+    width: 90px;
+}
+
+#RunDatelb {
+    position: absolute;
+    margin-left: -19%;
+    margin-top: -8%;
+    font-size: 0.8em;
+}
+
+#site {
+    position: absolute;
+    margin-top: -4%;
+    margin-left: 26%;
+    letter-spacing: 0.3em;
+    text-shadow: 1px 1px 10px rgb(8, 152, 205);
+}
+
+#BarrelInv {
+    box-shadow: 0.1px 0.1px 2px rgb(8, 152, 205);
+    font-style: italic;
+    letter-spacing: 0.2em;
+    width: 150px;
+    margin-left: 38%;
+    padding-bottom: 0, 5%;
+    padding-top: 0.5%;
+}
+
+#QClb,
+#Brllb,
+#Sumplb {
+    position: absolute;
+    font-weight: bold;
+    margin-top: -15px;
+}
+
+#QClb {
+    margin-left: -45%;
+}
+
+#Brllb {
+    margin-left: -27%;
+}
+
+#Sumplb {
+    margin-left: -1%;
+}
+
+#SendDElb {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -47%;
+    font-size: 0.8em;
+}
+
+#BrlDElb {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -32%;
+    font-size: 0.8em;
+}
+
+#BrlVislb {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -25.7%;
+    font-size: 0.8em;
+}
+
+#BrlV36lb {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -20%;
+    font-size: 0.8em;
+}
+
+#SumpDElb {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -5.5%;
+    font-size: 0.8em;
+}
+
+#SumpVislb {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 1%;
+    font-size: 0.8em;
+}
+
+#SumpV36lb {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 7%;
+    font-size: 0.8em;
+}
+
+#SendDE {
+    position: absolute;
+    margin-top: -2px;
+    margin-left: -48%;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#BrlDE {
+    position: absolute;
+    margin-top: -2px;
+    margin-left: -35%;
+    width: 36px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#BrlVis {
+    position: absolute;
+    margin-top: -2px;
+    margin-left: -28%;
+    width: 36px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#BrlV36 {
+    position: absolute;
+    margin-top: -2px;
+    margin-left: -21%;
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#SumpDE {
+    position: absolute;
+    margin-top: -2px;
+    margin-left: -8%;
+    width: 36px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#SumpVis {
+    position: absolute;
+    margin-top: -2px;
+    margin-left: -1%;
+    width: 36px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#SumpV36 {
+    position: absolute;
+    margin-top: -2px;
+    margin-left: 6%;
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#presses {
+    position: absolute;
+    height: 21px;
+    width: 140px;
+    margin-top: -2px;
+    margin-left: 20%;
+    text-align: center;
+}
+
+#send_date_lb,
+#batch_date_lb,
+#cyl_no_lb,
+#cyl_ftg_lb,
+#cyl_eng_lb {
+    position: absolute;
+    font-size: 0.8em;
+    margin-top: 1%;
+}
+
+#send_date,
+#batch_date,
+#cyl_no,
+#cyl_ftg,
+#cyl_eng {
+    position: absolute;
+    font-weight: bold;
+}
+
+#send_date_lb {
+    margin-left: -48%;
+}
+
+#batch_date_lb {
+    margin-left: -21%;
+}
+
+#cyl_no_lb {
+    margin-left: -1%;
+}
+
+#cyl_ftg_lb {
+    margin-left: 12%;
+}
+
+#cyl_eng_lb {
+    margin-left: 26.5%;
+}
+
+#send_date {
+    margin-left: -48%;
+    width: 20%;
+    text-align: center;
+}
+
+#batch_date {
+    margin-left: -26%;
+    width: 20%;
+    text-align: center;
+}
+
+#cyl_no {
+    margin-left: -4%;
+    width: 10%;
+    text-align: center;
+}
+
+#cyl_ftg {
+    margin-left: 9%;
+    width: 13%;
+    text-align: center;
+}
+
+#cyl_eng {
+    margin-left: 25%;
+    width: 20%;
+    text-align: center;
+}
+
+#cata,
+#catb,
+#FirstP,
+#tech {
+    position: absolute;
+}
+
+#cata {
+    margin-left: -47%;
+    width: 20%;
+}
+
+#catb {
+    margin-left: -25%;
+    width: 25%;
+}
+
+#FirstP {
+    margin-left: 11%;
+    width: 12%;
+}
+
+#tech {
+    margin-left: 22%;
+    width: 25%;
+}
+
+#commentslb {
+    position: absolute;
+    margin-left: 3%;
+    width: 100px;
+    box-shadow: 0.1px 0.1px 2px rgb(8, 152, 205);
+}
+
+#comments {
+    width: 630px;
+    margin-top: 3%;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0.5px 0.5px 10px rgb(196, 195, 195);
+}
+
+#btnCancel:hover,
+#btnSave:hover,
+#btnSkip:hover {
+    background-color: rgb(8, 152, 205);
+    color: white;
+}
+
+#btnCancel,
+#btnSave,
+#btnSkip {
+    position: absolute;
+    font-family: 'Nunito', sans-serif;
+    width: 120px;
+    margin-top: 1%;
+    height: 40px;
+    font-size: 1.1em;
+    border-radius: 2px;
+    background-color: white;
+    border: 1px solid rgb(8, 152, 205);
+}
+
+#btnCancel {
+    margin-left: -49.8%;
+}
+
+#btnSave {
+    margin-left: 33%;
+}
+
+#btnSkip {
+    border-radius: 40%;
+    margin-left: -4%;
+    width: fit-content;
+}
+
+#btnCancel:hover {
+    box-shadow: 0.5px 0.5px 10px red;
+}
+
+#btnSave:hover {
+    box-shadow: 0.5px 0.5px 10px green;
+}
+
+table,
+tr,
+th,
+td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    width: fit-content;
+}
+
+#HistTable {
+    position: absolute;
+    margin-top: -500px;
+    margin-left: -87%;
+}
+
+#HistTable table {
+    table-layout: auto;
+    width: 540PX;
+    text-align: center;
+    font-family: 'nunito', sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+#HistTable th,
+#AllRunsTable th {
+    font-size: 80%;
+    font-weight: bold;
+}
+
+#HistTable td {
+    font-size: smaller;
+}
+
+#HistTablelb {
+    position: absolute;
+    margin-left: 30%;
+    margin-top: -30px;
+    font-family: 'nunito', sans-serif;
+}
+
+#AllRunsDiv {
+    position: absolute;
+    margin-left: 110%;
+    margin-top: -580px;
+    width: 380px;
+    font-family: 'nunito', sans-serif;
+}
+
+#AllRunsTable td {
+    font-size: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#col-perf-container {
+    position: absolute;
+    margin-left: 22%;
+    margin-top: 1px;
+    width: fit-content;
+    font-family: 'nunito', sans-serif;
+}
+
+tr:nth-child(1) {
+    background-color: rgba(8, 152, 205, 0.514);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(227, 227, 227);
+}
+
+#AllRunsTable {
+    table-layout: auto;
+}
+
+#trial {
+    /**background-color: red;
+}
