@@ -258,7 +258,7 @@ if(isset($_POST['skipData'])){
                 break;
  
             case 'skip':
-                $con = mysqli_connect($host,$un,$pw,$db);
+
                 $skipping="UPDATE COL_RUNNING_CMI SET STATUS = 'SKIP' WHERE ID LIKE $ID";
                 mysqli_query($con,$skipping);
                 mysqli_close($con);
