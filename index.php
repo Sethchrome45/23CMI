@@ -20,7 +20,6 @@
 </head>
 
 <body>
-<?php include "connect.php"; ?>
     <?php include "phpfunct.php"; ?>
 
     <div id="Main-Splash">
