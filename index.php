@@ -26,7 +26,7 @@
     <div id="Main-Splash">
         <Header>
             <h1>
-                FLINT GROUP COLOR MATCHING
+                FLINT GROUP COLOR MATCHING new update
             </h1>
         </Header>
     </div>
