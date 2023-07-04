@@ -10,13 +10,111 @@
       exit;
    }
 
+   //HOME
+ //Columbus current year
+   $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL < 1";
+   $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
+   $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
+   $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 3";
+ //under 1 de col
+    $result1 = mysqli_query($con, $ytd1DE);
+    $result1 = mysqli_fetch_array($result1);
+    $colytd1DE = $result1[0];
+ //over 1 less than 2
+    $result1 = mysqli_query($con, $ytd2DE);
+    $result1 = mysqli_fetch_array($result1);
+    $colytd2DE = $result1[0];
+ //over 2 less 3
+    $result1 = mysqli_query($con,$ytd3DE);
+    $result1 = mysqli_fetch_array($result1);
+    $colytd3DE = $result1[0];
+ // over 3
+    $result1 = mysqli_query($con, $ytdOver3DE);
+    $result1 = mysqli_fetch_array($result1);
+    $colytdOver3DE = $result1[0];
+
+  //Deforest current year
+   $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM DEF_2023 WHERE FIRST_PULL < 1";
+   $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM DEF_2023 WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
+   $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM DEF_2023 WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
+   $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM DEF_2023 WHERE FIRST_PULL >= 3";
+ //under 1 de col
+    $result1 = mysqli_query($con, $ytd1DE);
+    $result1 = mysqli_fetch_array($result1);
+    $defytd1DE = $result1[0];
+ //over 1 less than 2
+    $result1 = mysqli_query($con, $ytd2DE);
+    $result1 = mysqli_fetch_array($result1);
+    $defytd2DE = $result1[0];
+ //over 2 less 3
+    $result1 = mysqli_query($con,$ytd3DE);
+    $result1 = mysqli_fetch_array($result1);
+    $defytd3DE = $result1[0];
+ // over 3
+    $result1 = mysqli_query($con, $ytdOver3DE);
+    $result1 = mysqli_fetch_array($result1);
+    $defytdOver3DE = $result1[0];
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //Deforest
+   $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL < 1";
+   $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
+   $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
+   $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 3";
+
 
 
 //grabbing Columbus this week  
     $currwk1DE = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL < 1";
     $currwk2DE = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
     $currwk3DE = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
-    $currwkOver3 = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL > 3";
+    $currwkOver3 = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 3";
     $currwkTotal = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())";
  //under 1 de col
     $result1 = mysqli_query($con, $currwk1DE);
@@ -44,7 +142,7 @@
    $colQc = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND CAT_A = 'QC'";
    $colPress = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $colStandard = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $colNos = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL > 3";
+   $colNos = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 3";
    $colTrial = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())";
    $colCyl = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL < 1";
    $colProj = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
@@ -89,7 +187,7 @@
    $OneDELW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) - 1 AND FIRST_PULL < 1";
    $TwoDELW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) - 1 AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $ThreeDELW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) - 1 AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $Over3LW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) - 1 AND FIRST_PULL > 3";
+   $Over3LW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) - 1 AND FIRST_PULL >= 3";
    $TotalLW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) - 1";
 //under 1 de col
    $result1 = mysqli_query($con, $OneDELW);
@@ -117,7 +215,7 @@
    $colQcLW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())-1 AND CAT_A = 'QC'";
    $colPressLW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())-1 AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $colStandardLW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())-1 AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $colNosLW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())-1 AND FIRST_PULL > 3";
+   $colNosLW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())-1 AND FIRST_PULL >= 3";
    $colTrialLW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())-1";
    $colCylLW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())-1 AND FIRST_PULL < 1";
    $colProjLW = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())-1 AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
@@ -183,7 +281,7 @@
    $Customer=$formulaNum1['CUST'];
    $ID = $formulaNum1['ID'];
    $RECEIVED = $formulaNum1['WT_SMPL_RCD'];
-   echo $ID;
+  
 
    $formulaNum1= '"' . $formulaNum . '"';
    $all_Runs_2022 ="SELECT COUNT(TRUNC_COLOR) FROM COL_2022 WHERE TRUNC_COLOR= $formulaNum1";
@@ -202,7 +300,7 @@
    $OneDEcmi22 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL < 1";
    $TwoDEcmi22 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $ThreeDEcmi22 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $Over3cmi22 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL > 3";
+   $Over3cmi22 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 3";
    $Totalcmi22 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1";
 //under 1 de col
    $result1 = mysqli_query($con, $OneDEcmi22);
@@ -229,7 +327,7 @@
    $OneDEcmi21 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL < 1";
    $TwoDEcmi21 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $ThreeDEcmi21 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $Over3cmi21 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL > 3";
+   $Over3cmi21 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 3";
    $Totalcmi21 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1";
 //under 1 de col
    $result1 = mysqli_query($con, $OneDEcmi21);
@@ -256,7 +354,7 @@
    $OneDEcmi20 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL < 1";
    $TwoDEcmi20 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $ThreeDEcmi20 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $Over3cmi20 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL > 3";
+   $Over3cmi20 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 3";
    $Totalcmi20 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1";
 //under 1 de col
    $result1 = mysqli_query($con, $OneDEcmi20);
@@ -284,7 +382,7 @@
    $OneDEcmi19 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL < 1";
    $TwoDEcmi19 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $ThreeDEcmi19 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $Over3cmi19 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL > 3";
+   $Over3cmi19 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 3";
    $Totalcmi19 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1";
 //under 1 de col
    $result1 = mysqli_query($con, $OneDEcmi19);
@@ -312,7 +410,7 @@
    $OneDEcmi18 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL < 1";
    $TwoDEcmi18 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $ThreeDEcmi18 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $Over3cmi18 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL > 3";
+   $Over3cmi18 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1 AND FIRST_PULL >= 3";
    $Totalcmi18 = "SELECT COUNT(FIRST_PULL) FROM col_2022 WHERE TRUNC_COLOR = $formulaNum1";
 //under 1 de col
    $result1 = mysqli_query($con, $OneDEcmi18);
@@ -424,7 +522,7 @@ $avgs=$cmi_avg18m."  |  ".$cmi_avg12m."  |  ".$cmi_avg6m."  |  ".$cmi_avg3m;
    $spec_h = mysqli_fetch_all($result, MYSQLI_ASSOC);
    $result = mysqli_query($con, $spec_his);
    $spec_hh = mysqli_fetch_array($result);
-   echo $spec_hh[2];
+
    
 
 //2021
