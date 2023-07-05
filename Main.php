@@ -31,6 +31,7 @@
         </Header>
     </div>
     <!--Main splash div -->
+
     <div class="navbar">
         <div class="dropdown">
             <div class="dropdown-content">
@@ -54,6 +55,7 @@
             <!--def2022 div-->
         </div>
         <!--box charts div-->
+
         <div class="Past_charts">
             <div id="col_y4">
             </div>
@@ -68,7 +70,38 @@
             <div id="def_y2">
             </div>
         </div>
-<!--past charts dive>
+        <!--past charts dive>-->
+
+       <div id="curr_iss">
+            <div id="col_iss">
+                <header>
+                    <h2>
+                        COLUMBUS
+                    </h2>
+                </header>
+                <P>
+                    &emsp; Code to display on-going activity, maybe include year in history or week in history.
+                </P>
+                <p>
+                    The trending issue for this week is ..... from php... Also pay attention to .... from php....
+                </p>
+            </div>
+            <div id="def_iss">
+            <header>
+                    <h2>
+                        DEFOREST
+                    </h2>
+                </header>
+                <P>
+                    &emsp; Code to display on-going activity, maybe include year in history or week in history.
+                </P>
+                <p>
+                    The trending issue for this week is .........from php .....
+                </p>
+            </div>
+        </div>
+        <!--Current issues ongoing for this week-->
+
 
     </div>
     <!--Main body div-->

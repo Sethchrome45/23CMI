@@ -1,7 +1,7 @@
         #Main-Splash {
             background-image: url('Images/flint.png');
             margin-top: -40px;
-            height: 110px;
+            height: 140px;
             margin-left: -10px;
             margin-right: -10px;
         }
@@ -12,8 +12,13 @@
             text-align: center;
             font-size: 3em;
             font-stretch: expanded;
-            padding-top: 55px;
+            padding-top: 75px;
             animation: mystretch 3s forwards;
+        }
+        
+        header h2 {
+            font-family: 'Nunito', sans-serif;
+            text-align: center;
         }
         
         @keyframes mystretch {
@@ -33,6 +38,7 @@
             height: 25px;
             margin: -10PX;
             margin-top: -1px;
+            overflow: hidden;
         }
         
         .navbar a {
@@ -57,8 +63,8 @@
         }
         
         .Box-charts {
-            margin-top: 20px;
             margin: auto;
+            margin-top: 15px;
             height: 300px;
             /* border: 1px solid black; */
             width: 80%;
@@ -69,6 +75,9 @@
         #def2022 {
             position: absolute;
             margin-top: 20px;
+            width: 25%;
+            box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+            border-radius: 2%;
         }
         
         #Col2022 {
@@ -97,7 +106,7 @@
         }
         
         #col_y1 {
-            margin-left: 37%
+            margin-left: 37%;
         }
         
         #col_y2 {
@@ -114,4 +123,28 @@
         
         #def_y2 {
             margin-left: 62%;
+        }
+        
+        #curr_iss {
+            margin: auto;
+            height: 150px;
+            width: 80%;
+            position: relative;
+            /*border: 1px solid black;*/
+        }
+        
+        #col_iss,
+        #def_iss {
+            position: absolute;
+            margin-top: 30px;
+            height: 600px;
+            border: 1px solid rgba(128, 128, 128, 0.5);
+            width: 40%;
+            margin-left: 8%;
+            padding-left: 0.5%;
+            /*box-shadow: 0.5px -10px 10px rgb(196, 195, 195);*/
+        }
+        
+        #def_iss {
+            margin-left: 50%;
         }

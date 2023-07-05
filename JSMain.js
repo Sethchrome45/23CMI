@@ -79,10 +79,10 @@ $(document).ready(function() {
             var options = {
                 'title': 'Columbus 2023',
                 'fontSize': 14,
-                'width': 250,
+                'width': 300,
                 'height': 270,
                 'legend': 'none',
-                'chartArea.left': 5,
+                'chartArea.left': 15,
                 'pieSliceBorderColor': 'black',
                 titleTextStyle: {
                     fontSize: 13,
@@ -91,9 +91,8 @@ $(document).ready(function() {
                 pieSliceTextStyle: {
                     color: 'white'
                 },
-                chartArea: { right: 0, left: 0, top: 30, width: '90%', height: '85%' },
+                chartArea: { right: 0, left: 15, top: 30, width: '70%', height: '80%' },
                 colors: ['#68b34f', '#68b34f', '#68b34f', '#45a3f5'],
-                //slices: [{}, {}, {}, { offset: '0.1' }],
                 slices: [{ offset: '0.03' }, { offset: '0.02' }, { offset: '0.02' }, { offset: '0.2' }],
                 pieStartAngle: 70,
                 pieSliceText: 'label',
@@ -267,7 +266,7 @@ $(document).ready(function() {
             var options = {
                 'title': 'Deforest 2023',
                 'fontSize': 14,
-                'width': 250,
+                'width': 300,
                 'height': 270,
                 'legend': 'none',
                 'chartArea.left': 5,
@@ -279,7 +278,7 @@ $(document).ready(function() {
                 pieSliceTextStyle: {
                     color: 'white'
                 },
-                chartArea: { right: 0, left: 0, top: 30, width: '90%', height: '85%' },
+                chartArea: { right: 0, left: 30, top: 30, width: '70%', height: '80%' },
                 colors: ['#68b34f', '#68b34f', '#68b34f', '#45a3f5'],
                 //slices: [{}, {}, {}, { offset: '0.1' }],
                 slices: [{ offset: '0.03' }, { offset: '0.02' }, { offset: '0.02' }, { offset: '0.2' }],
