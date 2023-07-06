@@ -10,12 +10,12 @@
       exit;
    }
 
-   //HOME
+   //////////////HOME
  //Columbus current year
-   $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL < 1";
-   $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
-   $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 3";
+   $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL < 1";
+   $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
+   $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
+   $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL >= 3";
  //under 1 de col
     $result1 = mysqli_query($con, $ytd1DE);
     $result1 = mysqli_fetch_array($result1);
@@ -55,7 +55,21 @@
     $result1 = mysqli_fetch_array($result1);
     $defytdOver3DE = $result1[0];
 
-    
+ //TRENDING
+ //COLUMBUS
+   $coltrend1 = "SELECT CAT_A, count(*) FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE()) GROUP BY CAT_A";
+   $coltrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM LIKE WEEK(CURDATE()) ";
+   $result1 = mysqli_query($con, $coltrend1);
+   $result1 = mysqli_fetch_array($result1);
+   $coltrend1 = $result1[0];
+   $coltrend2 = $result1[1];
+
+   $result2 = mysqli_query($con, $coltrendTtl);
+   $result2 = mysqli_fetch_array($result2);
+   $coltrendTtl = $result2[0];
+
+   $trendPcnt = round(($coltrend2/$coltrendTtl) * 100,1);
+ 
 
 
 

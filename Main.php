@@ -75,20 +75,18 @@
        <div id="curr_iss">
             <div id="col_iss">
                 <header>
-                    <h2>
-                        COLUMBUS
+                    <h2 id="col_title">
+                        COLUMBUS <small>-<i><?php echo $coltrendTtl ?> colors</i> </small>
                     </h2>
                 </header>
-                <P>
-                    &emsp; Code to display on-going activity, maybe include year in history or week in history.
-                </P>
                 <p>
-                    The trending issue for this week is ..... from php... Also pay attention to .... from php....
+                    &emsp; Trending issue so far this week is  <strong> <?php echo $coltrend1; ?></strong>, currently at <strong><?php echo $trendPcnt?></strong>%. Below is 
+                    some more stuff i need to think about and reports i need to display bluh bluh bluh
                 </p>
             </div>
             <div id="def_iss">
             <header>
-                    <h2>
+                    <h2 id="def_title">
                         DEFOREST
                     </h2>
                 </header>
