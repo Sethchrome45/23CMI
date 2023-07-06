@@ -1,8 +1,8 @@
 <?php
-$un="smensah";
-$pw="Iamsaved2day!";
-$host="cmi-server.mysql.database.azure.com";
-$db="cmi_db";
+$un="root";
+$pw="";
+$host="localhost";
+$db="cmi";
 
 $con=mysqli_connect($host,$un,$pw,$db);
 ?>
