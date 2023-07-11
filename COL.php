@@ -16,6 +16,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="ColJS.js"></script>
+    <script src="JSMain.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
@@ -59,6 +60,34 @@
             </div><!--Col-DE div-->
             <div id="Col-probLW">
             </div><!--Col-prob div-->
+            <div id="yr_in_H">
+            </div><!--year in history div-->
+            <div id="wk_in_H">
+            </div><!--year in history div-->
+            <div id="flex_chart">
+            </div><!--year in history div-->
+            <div id="past_charts">
+                
+                <div id="col_y4">
+                </div>
+                <div id="col_y3">
+                </div>
+                <div id="col_y2">
+                </div>
+                <div id="col_y1">
+                </div>
+
+
+
+
+            </div> <!--past charts div-->
+
+
+
+
+
+
+
         </div><!--Col-charts div-->
         
         <div id="col-buttons">
@@ -71,39 +100,56 @@
 
 </body>
 <footer>
-    
+
 <!--passing variables from php to jquery for now-->
 <!--current week outlook charts-->
-    <input type="hidden" id="currwk1DE" value=<?php echo $currwk1DE; ?>">
-    <input type="hidden" id="currwk2DE" value="<?php echo $currwk2DE; ?>">
-    <input type="hidden" id="currwk3DE" value="<?php echo $currwk3DE; ?>">
-    <input type="hidden" id="currwkOv3" value="<?php echo $currwkOver3; ?>">
-    <input type="hidden" id="currwkTotal" value="<?php echo $currwkTotal; ?>">
+    <input type="hidden" id="currwk1DE" value = "<?php echo $currwk1DE; ?>">
+    <input type="hidden" id="currwk2DE" value = "<?php echo $currwk2DE; ?>">
+    <input type="hidden" id="currwk3DE" value = "<?php echo $currwk3DE; ?>">
+    <input type="hidden" id="currwkOv3" value = "<?php echo $currwkOver3; ?>">
+    <input type="hidden" id="currwkTotal" value = "<?php echo $currwkTotal; ?>">
+<!--categories for this week-->
+    <input type="hidden" id="catA1" value = "<?php echo $CAT_A[0]; ?>">
+    <input type="hidden" id="catA2" value = "<?php echo $CAT_A[1]; ?>">
+    <input type="hidden" id="catA3" value = "<?php echo $CAT_A[2]; ?>">
+    <input type="hidden" id="catA4" value = "<?php echo $CAT_A[3]; ?>">
+    <input type="hidden" id="catA5" value = "<?php echo $CAT_A[4]; ?>">
+    <input type="hidden" id="catA6" value = "<?php echo $CAT_A[5]; ?>">
+    <input type="hidden" id="catA7" value = "<?php echo $CAT_A[6]; ?>">
 <!--categories data for this week-->
-    <input type="hidden" id="colQc" name="colQc" value=<?php echo $colQcLW; ?>">
-    <input type="hidden" id="colPress" value="<?php echo $colPress; ?>">
-    <input type="hidden" id="colStandard" value="<?php echo $colStandard; ?>">
-    <input type="hidden" id="colNoS" value="<?php echo $colNos; ?>">
-    <input type="hidden" id="colTrial" value="<?php echo $colTrial; ?>">
-    <input type="hidden" id="colCyl" value="<?php echo $colCyl; ?>">
-    <input type="hidden" id="colProj" value="<?php echo $colProj; ?>">
-    <input type="hidden" id="colOth" value="<?php echo $colOth; ?>">
+    <input type="hidden" id="countA1" value = "<?php echo $COUNT[0]; ?>">
+    <input type="hidden" id="countA2" value = "<?php echo $COUNT[1]; ?>">
+    <input type="hidden" id="countA3" value = "<?php echo $COUNT[2]; ?>">
+    <input type="hidden" id="countA4" value = "<?php echo $COUNT[3]; ?>">
+    <input type="hidden" id="countA5" value = "<?php echo $COUNT[4]; ?>">
+    <input type="hidden" id="countA6" value = "<?php echo $COUNT[5]; ?>">
+    <input type="hidden" id="countA7" value = "<?php echo $COUNT[6]; ?>">
+<!-- Year in history-->
+    <input type="hidden" id="yr1_in_H" value = "<?php echo $yr1_in_H; ?>">
+    <input type="hidden" id="yr2_in_H" value = "<?php echo $yr2_in_H; ?>">
+    <input type="hidden" id="yr3_in_H" value = "<?php echo $yr3_in_H; ?>">
+    <input type="hidden" id="yr4_in_H" value = "<?php echo $yr4_in_H; ?>">
+    <input type="hidden" id="yr_curr" value = "<?php echo $yr_curr; ?>">
+<!-- week in history-->
+    <input type="hidden" id="wkyr1_in_H" value = "<?php echo $wkyr1_in_H; ?>">
+    <input type="hidden" id="wkyr2_in_H" value = "<?php echo $wkyr2_in_H; ?>">
+    <input type="hidden" id="wkyr3_in_H" value = "<?php echo $wkyr3_in_H; ?>">
+    <input type="hidden" id="wkyr4_in_H" value = "<?php echo $wkyr4_in_H; ?>">
+    <input type="hidden" id="wk_curr" value = "<?php echo $wk_curr; ?>">
+<!-- flex chart - ctegories-->
+    <input type="hidden" id="colflex1" value = "<?php echo $colflex[0]; ?>">
+    <input type="hidden" id="colflex2" value = "<?php echo $colflex[1]; ?>">
+    <input type="hidden" id="colflex3" value = "<?php echo $colflex[2]; ?>">
+<!-- flex chart - values-->
+    <input type="hidden" id="colflexCt1" value = "<?php echo $colflexCount[0]; ?>">
+    <input type="hidden" id="colflexCt2" value = "<?php echo $colflexCount[1]; ?>">
+    <input type="hidden" id="colflexCt3" value = "<?php echo $colflexCount[2]; ?>">
 
-<!--last week outlook charts-->
-    <input type="hidden" id="OneDELW" value=<?php echo $OneDELW; ?>">
-    <input type="hidden" id="TwpDELW" value="<?php echo $TwoDELW; ?>">
-    <input type="hidden" id="ThreeDELW" value="<?php echo $ThreeDELW; ?>">
-    <input type="hidden" id="Over3" value="<?php echo $Over3LW; ?>">
-    <input type="hidden" id="TotalLW" value="<?php echo $TotalLW; ?>">
-<!--categories data for last week-->
-    <input type="hidden" id="colQc" name="colQc" value=<?php echo $colQcLW; ?>">
-    <input type="hidden" id="colPress" value="<?php echo $colPressLW; ?>">
-    <input type="hidden" id="colStandard" value="<?php echo $colStandardLW; ?>">
-    <input type="hidden" id="colNoS" value="<?php echo $colNosLW; ?>">
-    <input type="hidden" id="colTrial" value="<?php echo $colTrialLW; ?>">
-    <input type="hidden" id="colCyl" value="<?php echo $colCylLW; ?>">
-    <input type="hidden" id="colProj" value="<?php echo $colProjLW; ?>">
-    <input type="hidden" id="colOth" value="<?php echo $colOthLW; ?>">
+
+
+
+
+
 
 
 

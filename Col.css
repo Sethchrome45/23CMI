@@ -1,6 +1,6 @@
     #welcome {
         margin: auto;
-        margin-top: 60px;
+        margin-top: 38px;
         text-align: center;
         font-size: 2em;
         font-family: 'Nunito', sans-serif;
@@ -25,16 +25,79 @@
     #Col-charts {
         position: absolute;
         top: 250px;
-        width: 100%;
-        height: 300px;
+        width: 80%;
+        height: 840px;
+        padding-left: 3%;
         margin-left: 8%;
+        /*border: 1px solid rgb(252, 10, 10);*/
+    }
+    
+    #Col-DE {
+        position: absolute;
+        width: 26%;
+        padding: 2%;
+        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
     }
     
     #Col-prob {
-        position: relative;
-        margin-left: 21%;
-        top: -250px;
-        width: fit-content;
+        position: absolute;
+        margin-left: 31%;
+        width: 62%;
+        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+    }
+    
+    #past_charts {
+        position: absolute;
+        top: 510px;
+        width: 65%;
+        height: 160px;
+        padding-left: 15%;
+        margin-left: 6%;
+        /*border: 1px solid rgb(252, 10, 10);*/
+    }
+    
+    #col_y1,
+    #col_y2,
+    #col_y3,
+    #col_y4 {
+        position: absolute;
+        width: 14%;
+    }
+    
+    #col_y3 {
+        margin-left: 15%;
+    }
+    
+    #col_y2 {
+        margin-left: 30%;
+    }
+    
+    #col_y1 {
+        margin-left: 45%;
+    }
+    
+    #yr_in_H {
+        position: absolute;
+        margin-top: 250px;
+        margin-left: 31%;
+        width: 20%;
+        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+    }
+    
+    #wk_in_H {
+        position: absolute;
+        margin-top: 250px;
+        margin-left: 52%;
+        width: 20%;
+        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+    }
+    
+    #flex_chart {
+        position: absolute;
+        margin-top: 250px;
+        margin-left: 73%;
+        width: 20%;
+        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
     }
     
     #Col-report {
@@ -45,7 +108,7 @@
     #Col-entry,
     #Col-report {
         position: absolute;
-        top: 810px;
+        top: 1170px;
         padding: 10px 25px;
         font-family: 'Nunito', sans-serif;
         background-color: white;
@@ -73,6 +136,7 @@
     #Col-DELW {
         position: absolute;
         top: 270px;
+        border: 1px solid black;
     }
     
     #Col-probLW {

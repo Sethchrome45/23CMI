@@ -34,10 +34,10 @@
     $colytdOver3DE = $result1[0];
 
   //Deforest current year
-   $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM DEF_2023 WHERE FIRST_PULL < 1";
-   $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM DEF_2023 WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
-   $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM DEF_2023 WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM DEF_2023 WHERE FIRST_PULL >= 3";
+    $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL < 1";
+    $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
+    $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
+    $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 3";
  //under 1 de col
     $result1 = mysqli_query($con, $ytd1DE);
     $result1 = mysqli_fetch_array($result1);
@@ -57,33 +57,164 @@
 
  //TRENDING
  //COLUMBUS
-   $coltrend1 = "SELECT CAT_A, count(*) FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE()) GROUP BY CAT_A";
-   $coltrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM LIKE WEEK(CURDATE()) ";
-   $result1 = mysqli_query($con, $coltrend1);
-   $result1 = mysqli_fetch_array($result1);
-   $coltrend1 = $result1[0];
-   $coltrend2 = $result1[1];
+    $coltrend1 = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE()) - 1 GROUP BY CAT_A ORDER BY COUNT DESC";
+    $coltrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM = WEEK(CURDATE()) - 1";
+    $result1 = mysqli_query($con, $coltrend1);
+    $result1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
+ //$result1 = mysqli_fetch_array($result1);
 
-   $result2 = mysqli_query($con, $coltrendTtl);
-   $result2 = mysqli_fetch_array($result2);
-   $coltrendTtl = $result2[0];
+    $CAT_A = array();
+    $COUNT = array();
+    $CAT_A = array_fill(0,7,'Nothing yet!');
+    $COUNT = aRray_fill(0,7,0);
 
-   $trendPcnt = round(($coltrend2/$coltrendTtl) * 100,1);
+    $i = 0;
+    foreach ($result1 as $row) {
+       $CAT_A[$i] = $row["CAT_A"];
+       $COUNT[$i]=$row["COUNT"];
+       //printf ("%s (%s)\n", $row["CAT_A"], $row["COUNT"]);
+       $i++;
+      }
+
+    $result2 = mysqli_query($con, $coltrendTtl);
+    $result2 = mysqli_fetch_array($result2);
+    $coltrendTtl = $result2[0];
+
+    $trendPcnt = round(($COUNT[0]/$coltrendTtl) * 100,1);
+
+ //year in history 3de
+   $yr4_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2019 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
+   $yr3_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2020 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
+   $yr2_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2021 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
+   $yr1_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2022 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
+   $yr_curr = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
+
+   $yr4_ttl = "SELECT COUNT(FIRST_PULL) FROM COL_2019 WHERE WEEK_NUM < week(curdate())";
+   $yr3_ttl = "SELECT COUNT(FIRST_PULL) FROM COL_2020 WHERE WEEK_NUM < week(curdate())";
+   $yr2_ttl = "SELECT COUNT(FIRST_PULL) FROM COL_2021 WHERE WEEK_NUM < week(curdate())"; 
+   $yr1_ttl = "SELECT COUNT(FIRST_PULL) FROM COL_2022 WHERE WEEK_NUM < week(curdate())";  
+   $curr_ttl = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE WEEK_NUM < week(curdate())";
  
+   $result4 = mysqli_query($con, $yr4_in_H);
+   $result4 = mysqli_fetch_array($result4);
+   $yr4_in_H = $result4[0];
+   $result3 = mysqli_query($con, $yr3_in_H);
+   $result3 = mysqli_fetch_array($result3);
+   $yr3_in_H = $result3[0];
+   $result2 = mysqli_query($con, $yr2_in_H);
+   $result2 = mysqli_fetch_array($result2);
+   $yr2_in_H = $result2[0];
+   $result1 = mysqli_query($con, $yr1_in_H);
+   $result1 = mysqli_fetch_array($result1);
+   $yr1_in_H = $result1[0];
+   $result1 = mysqli_query($con, $yr_curr);
+   $result1 = mysqli_fetch_array($result1);
+   $yr_curr = $result1[0];
+
+   $result4 = mysqli_query($con, $yr4_ttl);
+   $result4 = mysqli_fetch_array($result4);
+   $yr4_ttl = $result4[0];
+   $result3 = mysqli_query($con, $yr3_ttl);
+   $result3 = mysqli_fetch_array($result3);
+   $yr3_ttl = $result3[0];
+   $result2 = mysqli_query($con, $yr2_ttl);
+   $result2 = mysqli_fetch_array($result2);
+   $yr2_ttl = $result2[0];
+   $result1 = mysqli_query($con, $yr1_ttl);
+   $result1 = mysqli_fetch_array($result1);
+   $yr1_ttl = $result1[0];
+   $result1 = mysqli_query($con, $curr_ttl);
+   $result1 = mysqli_fetch_array($result1);
+   $curr_ttl = $result1[0];
+
+   $yr4_in_H = round(($yr4_in_H / $yr4_ttl) * 100, 2);
+   $yr3_in_H = round(($yr3_in_H / $yr3_ttl) * 100, 2);
+   $yr2_in_H = round(($yr2_in_H / $yr2_ttl) * 100, 2);
+   $yr1_in_H = round(($yr1_in_H / $yr1_ttl) * 100, 2);
+   $yr_curr = round(($yr_curr / $curr_ttl) * 100, 2);
 
 
+//Week in history
+   $wkyr4_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2019 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
+   $wkyr3_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2020 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
+   $wkyr2_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2021 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
+   $wkyr1_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2022 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
+   $wk_curr = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
 
+   $wkyr4_ttl = "SELECT COUNT(FIRST_PULL) FROM COL_2019 WHERE WEEK_NUM = week(curdate()) - 1";
+   $wkyr3_ttl = "SELECT COUNT(FIRST_PULL) FROM COL_2020 WHERE WEEK_NUM = week(curdate()) - 1";
+   $wkyr2_ttl = "SELECT COUNT(FIRST_PULL) FROM COL_2021 WHERE WEEK_NUM = week(curdate()) - 1"; 
+   $wkyr1_ttl = "SELECT COUNT(FIRST_PULL) FROM COL_2022 WHERE WEEK_NUM = week(curdate()) - 1";  
+   $wk_ttl = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE WEEK_NUM = week(curdate()) - 1";
 
+   $result4 = mysqli_query($con, $wkyr4_in_H);
+   $result4 = mysqli_fetch_array($result4);
+   $wkyr4_in_H = $result4[0];
+   $result3 = mysqli_query($con, $wkyr3_in_H);
+   $result3 = mysqli_fetch_array($result3);
+   $wkyr3_in_H = $result3[0];
+   $result2 = mysqli_query($con, $wkyr2_in_H);
+   $result2 = mysqli_fetch_array($result2);
+   $wkyr2_in_H = $result2[0];
+   $result1 = mysqli_query($con, $wkyr1_in_H);
+   $result1 = mysqli_fetch_array($result1);
+   $wkyr1_in_H = $result1[0];
+   $result1 = mysqli_query($con, $wk_curr);
+   $result1 = mysqli_fetch_array($result1);
+   $wk_curr = $result1[0];
 
+   $result4 = mysqli_query($con, $wkyr4_ttl);
+   $result4 = mysqli_fetch_array($result4);
+   $wkyr4_ttl = $result4[0];
+   $result3 = mysqli_query($con, $wkyr3_ttl);
+   $result3 = mysqli_fetch_array($result3);
+   $wkyr3_ttl = $result3[0];
+   $result2 = mysqli_query($con, $wkyr2_ttl);
+   $result2 = mysqli_fetch_array($result2);
+   $wkyr2_ttl = $result2[0];
+   $result1 = mysqli_query($con, $wkyr1_ttl);
+   $result1 = mysqli_fetch_array($result1);
+   $wkyr1_ttl = $result1[0];
+   $result1 = mysqli_query($con, $wk_ttl);
+   $result1 = mysqli_fetch_array($result1);
+   $wk_ttl = $result1[0];
 
+   $wkyr4_in_H = round(($wkyr4_in_H / $wkyr4_ttl) * 100, 2);
+   $wkyr3_in_H = round(($wkyr3_in_H / $wkyr3_ttl) * 100, 2);
+   $wkyr2_in_H = round(($wkyr2_in_H / $wkyr2_ttl) * 100, 2);
+   $wkyr1_in_H = round(($wkyr1_in_H / $wkyr1_ttl) * 100, 2);
+   if($wk_curr == 0){
+      $wk_curr = 0;
+   } else {
+      $wk_curr = round(($wk_curr / $wk_ttl) * 100, 2);
+   }
 
+   //Flex chart
+   $colflex = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi where CAT_A IS NOT NULL GROUP BY CAT_A ORDER BY COUNT DESC LIMIT 3";
+   $colflexTtl = "SELECT ID FROM col_running_cmi order by ID DESC LIMIT 1";
+   $result1 = mysqli_query($con, $colflex);
+   $result1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
 
+   $result2 = mysqli_query($con, $colflexTtl);
+   $result2 = mysqli_fetch_array($result2);
+   $colflexTtl = $result2[0];
 
+   $colflex = array();
+   $colflexCount = array();
+   $colflex = array_fill(0,3,'Nothing yet!');
+   $colflexCount = array_fill(0,3,0);
 
+   $i = 0;
+   foreach ($result1 as $row) {
+      $colflex[$i] = $row["CAT_A"];
+      $colflexCount[$i]=$row["COUNT"];
+      //printf ("%s (%s)\n", $row["CAT_A"], $row["COUNT"]);
+      $i++;
+   }
 
-
-
-
+   $colflexCount[0] = round(($colflexCount[0] / $colflexTtl) * 100, 2);
+   $colflexCount[1] = round(($colflexCount[1] / $colflexTtl) * 100, 2);
+   $colflexCount[2] = round(($colflexCount[2] / $colflexTtl) * 100, 2);
 
 
 

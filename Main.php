@@ -55,7 +55,7 @@
             <!--def2022 div-->
         </div>
         <!--box charts div-->
-
+<!--
         <div class="Past_charts">
             <div id="col_y4">
             </div>
@@ -71,7 +71,7 @@
             </div>
         </div>
         <!--past charts dive>-->
-
+                
        <div id="curr_iss">
             <div id="col_iss">
                 <header>
@@ -80,7 +80,8 @@
                     </h2>
                 </header>
                 <p>
-                    &emsp; Trending issue so far this week is  <strong> <?php echo $coltrend1; ?></strong>, currently at <strong><?php echo $trendPcnt?></strong>%. Below is 
+                    &emsp; Trending issue so far this week is  <strong> <?php echo $CAT_A[0]; ?></strong>, currently at <strong><?php echo $COUNT[0]?></strong>%, with 
+                    <i><?php echo $CAT_A[1] ?></i> following at <i><?php echo $COUNT[1] ?>%</i> Below is 
                     some more stuff i need to think about and reports i need to display bluh bluh bluh
                 </p>
             </div>
