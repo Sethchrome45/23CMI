@@ -1,0 +1,94 @@
+            #container {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.449), rgba(0, 0, 0, 0.147)), url('Images/welcPic.jpg');
+                background-size: cover;
+                display: block;
+                left: -5px;
+                top: -5px;
+                bottom: -5px;
+                right: -5px;
+                margin: -5px;
+                position: fixed;
+            }
+            
+            #container p {
+                position: absolute;
+                margin-left: -1%;
+                margin-top: 300px;
+                padding-left: 6%;
+                padding-bottom: 0.5%;
+                padding-right: 2%;
+                color: rgb(102, 89, 89);
+                font-weight: bold;
+                font-size: 2.5em;
+                font-family: 'Gruppo', sans-serif;
+                text-shadow: rgb(0, 0, 0) 5px 20px 20px;
+                animation-name: WelIndex;
+                animation-duration: 1s;
+                background-color: rgba(255, 255, 255, 0.684);
+            }
+            
+            @keyframes WelIndex {
+                from {
+                    margin-left: -15%;
+                    color: rgba(255, 255, 255, 0);
+                    background-color: rgba(255, 255, 255, 0.222);
+                    text-shadow: rgb(0, 0, 0) 5px 1px 10px;
+                }
+                to {
+                    margin-left: -1%;
+                }
+            }
+            
+            #W {
+                font-size: 1.3em;
+            }
+            
+            #btns {
+                position: absolute;
+                width: fit-content;
+                margin-top: 460px;
+                margin-left: 30%;
+                width: 300px
+            }
+            
+            button {
+                padding: 7%;
+                background-color: rgba(88, 87, 87, 0.726);
+                margin-left: 9%;
+                border: 1px solid white;
+                border-radius: 6%;
+                /*font-family: 'Nunito', sans-serif;*/
+                color: rgba(231, 231, 231, 0.816);
+                text-shadow: rgb(0, 0, 0) 5px 1px 10px;
+                stroke-dasharray: 150 4800;
+                stroke-dashoffset: 150;
+                transition: 0.28s ease-in-out;
+            }
+            
+            button:hover {
+                background-color: rgba(86, 64, 2, 0.915);
+                color: rgb(255, 255, 255);
+                border: 1px solid rgb(255, 255, 255);
+                text-shadow: rgba(192, 192, 192, 0.597) 5px 1px 10px;
+            }
+            
+            button:active {
+                transform: translateY(6px);
+                box-shadow: 0 5px 50px rgb(246, 138, 7);
+            }
+            
+            button {
+                animation: startIn 0.5s ease-out;
+                animation-fill-mode: backwards;
+            }
+            
+            @keyframes startIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }

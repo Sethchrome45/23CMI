@@ -33,6 +33,8 @@
     $result1 = mysqli_fetch_array($result1);
     $colytdOver3DE = $result1[0];
 
+
+
   //Deforest current year
     $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL < 1";
     $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
@@ -81,6 +83,42 @@
     $coltrendTtl = $result2[0];
 
     $trendPcnt = round(($COUNT[0]/$coltrendTtl) * 100,1);
+ 
+ //DEFOREST
+     $coltrend1 = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE()) - 1 GROUP BY CAT_A ORDER BY COUNT DESC";
+     $coltrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM = WEEK(CURDATE()) - 1";
+     $result1 = mysqli_query($con, $coltrend1);
+     $result1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
+
+   $CAT_A = array();
+   $COUNT = array();
+   $CAT_A = array_fill(0,7,'Nothing yet!');
+   $COUNT = aRray_fill(0,7,0);
+
+   $i = 0;
+   foreach ($result1 as $row) {
+      $CAT_A[$i] = $row["CAT_A"];
+      $COUNT[$i]=$row["COUNT"];
+      //printf ("%s (%s)\n", $row["CAT_A"], $row["COUNT"]);
+      $i++;
+      }
+
+   $result2 = mysqli_query($con, $coltrendTtl);
+   $result2 = mysqli_fetch_array($result2);
+   $coltrendTtl = $result2[0];
+
+   $trendPcnt = round(($COUNT[0]/$coltrendTtl) * 100,1);
+
+
+
+
+
+
+
+
+
+
+
 
  //year in history 3de
    $yr4_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2019 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
@@ -417,6 +455,10 @@
    $result_cmi = mysqli_query($con,$formulaNum1);
    $formulaNum1 = mysqli_fetch_array($result_cmi);
 
+   if (empty($formulaNum1cho)){
+      
+   } else {
+   
    $formulaNum = $formulaNum1['FORM_NUM'];
    $SPEC = $formulaNum1['SPEC'];
    $ColorName = $formulaNum1['COLOR_DESC'];
@@ -676,6 +718,11 @@ $avgs=$cmi_avg18m."  |  ".$cmi_avg12m."  |  ".$cmi_avg6m."  |  ".$cmi_avg3m;
    $spec_h2 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
+
+   mysqli_free_result($result);
+   mysqli_close($con);
+
+}
 //problem category A
    $cata="SELECT DISTINCT CAT_A FROM CATEGORIES";
    $cata_result = mysqli_query($con,$cata);
@@ -773,8 +820,7 @@ if(isset($_POST['skipData1'])){
 
 
               
-mysqli_free_result($result);
-mysqli_close($con);
+
 ?>
 
 

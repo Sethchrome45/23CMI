@@ -2,8 +2,8 @@
             background-image: url('Images/flint.png');
             margin-top: -40px;
             height: 140px;
-            margin-left: -10px;
-            margin-right: -10px;
+            margin-left: -8px;
+            margin-right: -8px;
         }
         
         header h1 {
@@ -71,22 +71,59 @@
             position: relative;
         }
         
+        #main_body {
+            background-color: rgba(236, 236, 236, 0.974);
+            height: 1100px;
+            margin-top: 10px;
+            margin-left: -8px;
+            margin-right: -8px;
+        }
+        
+        #col_de_main {
+            color: blue;
+            font-size: 120%;
+        }
+        
+        #curr_iss {
+            /*border: 1px solid black;*/
+        }
+        
         #Col2022,
         #def2022 {
             position: absolute;
             margin-top: 20px;
-            box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+            box-shadow: 0.5px 0.5px 15px rgb(102, 99, 99);
             border-radius: 2%;
         }
         
+        #col_overall {
+            position: absolute;
+            top: 100px;
+            width: 11%;
+            padding-left: 1%;
+            margin-left: 4%;
+            border-left: 1px solid rgb(0, 179, 255);
+            /*box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);*/
+        }
+        
+        #def_overall {
+            position: absolute;
+            top: 100px;
+            width: 11%;
+            padding-right: 1%;
+            margin-left: 83%;
+            border-right: 1px solid rgb(68, 144, 73);
+            /*box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);*/
+        }
+        
         #Col2022 {
-            margin-left: 24%;
+            margin-left: 18%;
             width: max-content;
         }
         
         #def2022 {
             margin-right: 14%;
-            margin-left: 55%;
+            margin-left: 56%;
             width: max-content;
         }
         
@@ -152,9 +189,11 @@
             width: 36%;
             margin-left: 8%;
             padding: 1em;
+            box-shadow: 0.5px 0.5px 15px rgb(102, 99, 99);
+            border-radius: 1%;
             /*box-shadow: 0.5px -10px 10px rgb(196, 195, 195);*/
         }
         
         #def_iss {
-            margin-left: 50%;
+            margin-left: 52%;
         }

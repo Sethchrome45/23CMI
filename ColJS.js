@@ -134,7 +134,7 @@ $(document).ready(function() {
 
 
 
-        /*
+
         function drawColprob() {
             var data = google.visualization.arrayToDataTable([
                 ['Ink DE categories', 'Last Wk', 'Current Wk'],
@@ -179,7 +179,7 @@ $(document).ready(function() {
             chart.draw(data, google.charts.Bar.convertOptions(options));
         };
 
-*/
+
 
 
 
