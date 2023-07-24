@@ -59,8 +59,8 @@
 
  //TRENDING
  //COLUMBUS
-    $coltrend1 = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE()) - 1 GROUP BY CAT_A ORDER BY COUNT DESC";
-    $coltrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM = WEEK(CURDATE()) - 1";
+    $coltrend1 = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE())  GROUP BY CAT_A ORDER BY COUNT DESC";
+    $coltrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM = WEEK(CURDATE())";
     $result1 = mysqli_query($con, $coltrend1);
     $result1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
  //$result1 = mysqli_fetch_array($result1);
@@ -77,37 +77,49 @@
        //printf ("%s (%s)\n", $row["CAT_A"], $row["COUNT"]);
        $i++;
       }
-
+      
     $result2 = mysqli_query($con, $coltrendTtl);
     $result2 = mysqli_fetch_array($result2);
     $coltrendTtl = $result2[0];
 
-    $trendPcnt = round(($COUNT[0]/$coltrendTtl) * 100,1);
+    if ($coltrendTtl == 0) {
+      $trendPcnt = 0;
+    }else {
+         $trendPcnt = round(($COUNT[0]/$coltrendTtl) * 100,1);
+      }
+    
+    
  
  //DEFOREST
-     $coltrend1 = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE()) - 1 GROUP BY CAT_A ORDER BY COUNT DESC";
-     $coltrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM = WEEK(CURDATE()) - 1";
+     $deftrend1 = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE()) GROUP BY CAT_A ORDER BY COUNT DESC";
+     $deftrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM = WEEK(CURDATE())";
      $result1 = mysqli_query($con, $coltrend1);
      $result1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
 
-   $CAT_A = array();
-   $COUNT = array();
-   $CAT_A = array_fill(0,7,'Nothing yet!');
-   $COUNT = aRray_fill(0,7,0);
+   $CAT_A_DEF = array();
+   $COUNT_DEF = array();
+   $CAT_A_DEF = array_fill(0,7,'Nothing yet!');
+   $COUNT_DEF = aRray_fill(0,7,0);
 
    $i = 0;
    foreach ($result1 as $row) {
-      $CAT_A[$i] = $row["CAT_A"];
-      $COUNT[$i]=$row["COUNT"];
+      $CAT_A_DEF[$i] = $row["CAT_A"];
+      $COUNT_DEF[$i]=$row["COUNT"];
       //printf ("%s (%s)\n", $row["CAT_A"], $row["COUNT"]);
       $i++;
       }
 
-   $result2 = mysqli_query($con, $coltrendTtl);
+   $result2 = mysqli_query($con, $deftrendTtl);
    $result2 = mysqli_fetch_array($result2);
-   $coltrendTtl = $result2[0];
+   $deftrendTtl = $result2[0];
 
-   $trendPcnt = round(($COUNT[0]/$coltrendTtl) * 100,1);
+   if ($coltrendTtl == 0) {
+      $trendPcntDf = 0;
+    }else {
+      $trendPcntDf = round(($COUNT_DEF[0]/$deftrendTtl) * 100,1);
+      }
+    
+   
 
 
 
@@ -455,7 +467,7 @@
    $result_cmi = mysqli_query($con,$formulaNum1);
    $formulaNum1 = mysqli_fetch_array($result_cmi);
 
-   if (empty($formulaNum1cho)){
+   if (empty($formulaNum1)){
       
    } else {
    

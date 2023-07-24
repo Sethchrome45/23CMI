@@ -17,6 +17,7 @@ $(document).ready(function() {
     var catA6 = $("#catA6").val();
     var catA7 = $("#catA7").val();
 
+
     //current week category values
     var countA1 = parseInt($("#countA1").val());
     var countA2 = parseInt($("#countA2").val());
@@ -300,7 +301,7 @@ $(document).ready(function() {
                 height: 220,
                 fontSize: 12,
                 legend: { position: 'none' },
-                title: 'WEEK IN HISTORY (%)',
+                title: 'LAST WEEK IN HISTORY (%)',
                 colors: ['#0AB0CE'],
                 hAxis: {
                     gridlines: { count: 2 },
@@ -550,7 +551,8 @@ $(document).ready(function() {
                 FirstP: FirstP,
                 Resetswitch: Resetswitch,
                 tech: tech,
-                comments: comments
+                comments: comments,
+
             },
 
             //dataType: 'text',
@@ -615,7 +617,14 @@ $(document).ready(function() {
 
 
 
-
+    $.ajax({
+        url: "test.php",
+        dataType: "json", //the return type data is jsonn
+        success: function(data) { // <--- (data) is in json format
+            alert(data.test1);
+            //parse the json data
+        }
+    });
 
 
 

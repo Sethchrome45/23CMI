@@ -1,144 +1,197 @@
-    #welcome {
-        margin: auto;
-        margin-top: 38px;
-        text-align: center;
-        font-size: 2em;
-        font-family: 'Nunito', sans-serif;
+#Col_splash {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.449), rgba(0, 0, 0, 0.347)), url('Images/hector-j-rivas-1FxMET2U5dU-unsplash.jpg');
+    background-size: cover;
+    margin-top: -30px;
+    height: 270px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+header h1 {
+    position: relative;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 2em;
+    padding-top: 20px;
+    font-stretch: expanded;
+    padding-left: 15px;
+    width: fit-content;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 5px 1px 10px;
+    animation: mystretch 1s forwards;
+}
+
+@keyframes mystretch {
+    to {
+        letter-spacing: 0.2em;
+    }
+}
+
+.navbar a:hover {
+    text-shadow: rgb(255, 255, 255) 1px 5px 30px;
+    cursor: default;
+    border-top: 2px solid rgb(184, 184, 184);
+    transition: all 200ms ease-out;
+    border-color: rgba(235, 163, 19, 0.637);
+}
+
+.navbar a {
+    font-family: 'Nunito', sans-serif;
+    text-decoration: solid;
+    color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: all 1s;
+}
+
+.navbar {
+    position: relative;
+    margin-top: -127px;
+    float: right;
+    margin-right: 5.1%;
+    word-spacing: 2em;
+}
+
+#welcome {
+    margin: auto;
+    margin-top: 38px;
+    text-align: center;
+    font-size: 2.4em;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(0, 170, 204);
+    text-shadow: rgb(129, 129, 129) 10px 1px 10px;
+    animation-name: welcome;
+    animation-duration: 1.5s;
+}
+
+@keyframes welcome {
+    from {
+        color: rgba(255, 255, 255, 0);
+    }
+    to {
         color: rgb(0, 170, 204);
-        text-shadow: rgb(79, 79, 79) 5px 1px 10px;
-        /*animation-name: welcome;
-        animation-duration: 1.5s;*/
     }
-    
-    @keyframes welcome {
-        from {
-            margin-top: -10px;
-            color: rgb(255, 255, 255);
-            text-shadow: rgb(255, 255, 255) 5px 1px 10px;
-        }
-        to {
-            margin-top: 60px;
-            color: rgb(0, 170, 204);
-        }
-    }
-    
-    #Col-charts {
-        position: absolute;
-        top: 250px;
-        width: 80%;
-        height: 840px;
-        padding-left: 3%;
-        margin-left: 8%;
-        /*border: 1px solid rgb(252, 10, 10);*/
-    }
-    
-    #Col-DE {
-        position: absolute;
-        width: 26%;
-        padding: 2%;
-        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
-    }
-    
-    #Col-prob {
-        position: absolute;
-        margin-left: 31%;
-        width: 62%;
-        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
-    }
-    
-    #past_charts {
-        position: absolute;
-        top: 510px;
-        width: 65%;
-        height: 160px;
-        padding-left: 8%;
-        margin-left: 6%;
-        /*border: 1px solid rgb(252, 10, 10);*/
-    }
-    
-    #col_y1,
-    #col_y2,
-    #col_y3,
-    #col_y4 {
-        position: absolute;
-        width: 14%;
-    }
-    
-    #col_y3 {
-        margin-left: 23%;
-    }
-    
-    #col_y2 {
-        margin-left: 45%;
-    }
-    
-    #col_y1 {
-        margin-left: 67%;
-    }
-    
-    #yr_in_H {
-        position: absolute;
-        margin-top: 250px;
-        margin-left: 31%;
-        width: 20%;
-        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
-    }
-    
-    #wk_in_H {
-        position: absolute;
-        margin-top: 250px;
-        margin-left: 52%;
-        width: 20%;
-        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
-    }
-    
-    #flex_chart {
-        position: absolute;
-        margin-top: 250px;
-        margin-left: 73%;
-        width: 20%;
-        box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
-    }
-    
-    #Col-report {
-        position: relative;
-        margin-left: 9%;
-    }
-    
-    #Col-entry,
-    #Col-report {
-        position: absolute;
-        top: 1170px;
-        padding: 10px 25px;
-        font-family: 'Nunito', sans-serif;
-        background-color: white;
-        border: 1px solid rgb(8, 152, 205);
-        font-size: 1em;
-        border-radius: 2px;
-        margin-left: 9%;
-    }
-    
-    #Col-entry:hover,
-    #Col-report:hover {
-        background-color: rgb(8, 152, 205);
-        color: white;
-    }
-    
-    #Col-report {
-        margin-left: 51%;
-    }
-    
-    #Col-entry {
-        margin-left: 42%;
-    }
-    
-    #Col-probLW,
-    #Col-DELW {
-        position: absolute;
-        top: 270px;
-        border: 1px solid black;
-    }
-    
-    #Col-probLW {
-        margin-left: 21%;
-    }
+}
+
+#Col-charts {
+    position: relative;
+    top: -30px;
+    width: 80%;
+    height: 700px;
+    padding-left: 3%;
+    margin-left: 8%;
+}
+
+#Col-DE {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 26%;
+    padding: 2%;
+    box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+}
+
+#Col-prob {
+    position: absolute;
+    margin-left: 31%;
+    width: 62%;
+    box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+}
+
+#past_charts {
+    position: relative;
+    top: 500px;
+    width: 75%;
+    height: 160px;
+    padding-left: 8%;
+    margin-left: 6%;
+}
+
+#col_y1,
+#col_y2,
+#col_y3,
+#col_y4 {
+    position: absolute;
+    width: 14%;
+}
+
+#col_y3 {
+    padding-left: 25%;
+}
+
+#col_y2 {
+    padding-left: 49%;
+}
+
+#col_y1 {
+    margin-left: 75%;
+}
+
+#yr_in_H {
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 31%;
+    width: 20%;
+    box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+}
+
+#wk_in_H {
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 52%;
+    width: 20%;
+    box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+}
+
+#flex_chart {
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 73%;
+    width: 20%;
+    box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
+}
+
+#Col-entry,
+#Col-report {
+    position: relative;
+    padding: 10px 25px;
+    font-family: 'Nunito', sans-serif;
+    background-color: white;
+    border: 1px solid rgb(8, 152, 205);
+    font-size: 1em;
+    border-radius: 2px;
+    margin-left: 9%;
+    top: -10px;
+}
+
+#Col-report {
+    position: relative;
+    margin-left: 9%;
+    top: -54px;
+}
+
+#Col-entry:hover,
+#Col-report:hover {
+    background-color: rgb(8, 152, 205);
+    color: white;
+}
+
+#Col-report {
+    margin-left: 51%;
+}
+
+#Col-entry {
+    margin-left: 42%;
+}
+
+#Col-probLW,
+#Col-DELW {
+    position: absolute;
+    top: 270px;
+    border: 1px solid black;
+}
+
+#Col-probLW {
+    margin-left: 21%;
+}

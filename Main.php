@@ -23,16 +23,20 @@
 <?php include "connect.php"; ?>
     <?php include "phpfunct.php"; ?>
 
-    <div id="Main-Splash">
+    <div id="main_body">
+       
+        <div id="Main-Splash">
+
+        </div><!--body top div-->   
         <Header>
             <h1>
-                FLINT GROUP COLOR MATCHING
+                COLOR MATCH RESEARCH
             </h1>
         </Header>
-    </div>
-    <!--Main splash div -->
+       
+       
 
-    <div class="navbar">
+      <div class="navbar">
         <div class="dropdown">
             <div class="dropdown-content">
                 <a href="#home" id="Dent">HOME</a>
@@ -42,13 +46,13 @@
                 <a href="#">ABOUT</a>
             </div>
         </div>
-    </div>
+      </div>
 
 
-    <div id="main_body">
+     
         <div class="Box-charts">
             <div id="col_overall">
-                <p><i><?php echo 100 - $yr_curr ?>% of <?php echo $curr_ttl ?> runs under 3de. So we are currently at <strong id="col_de_main"><?php echo $yr_curr ?>%</strong></i></p>
+                <p><i><?php echo 100 - $yr_curr ?>% of <?php echo $curr_ttl ?> runs under 3de. At and over 3de currently at <strong id="col_de_main"><?php echo $yr_curr ?>%</strong></i></p>
             </div> <!--Col overall, year to date de -->
             <DIV id="Col2022">
             </DIV><!--Col2022 div--> 
@@ -56,27 +60,12 @@
             </DIV>
             <!--def2022 div-->
             <div id="def_overall">
-                <p><i>89% of 1300 runs under 3de. currently at 3%</i></p>
+            <p><i><?php echo 100 - $yr_curr ?>% of <?php echo $curr_ttl ?> runs under 3de. At and over 3de currently at <strong id="col_de_main"><?php echo $yr_curr ?>%</strong></i></p>
             </div> <!--Col overall, year to date de -->
         </div>
-        <!--box charts div-->
-<!--
-        <div class="Past_charts">
-            <div id="col_y4">
-            </div>
-            <div id="col_y3">
-            </div>
-            <div id="col_y2">
-            </div>
-            <div id="col_y1">
-            </div>
-            <div id="def_y1">
-            </div>
-            <div id="def_y2">
-            </div>
-        </div>
-        <!--past charts dive>-->
-                
+         <!--Main splash div -->
+
+          
        <div id="curr_iss">
             <div id="col_iss">
                 <header>
@@ -114,6 +103,7 @@
 
 </body>
 <footer>
+    <div id="footer_banner"></div><!--Footer banner div-->
 <!--passing variables from php to jquery for now-->
 
 <!--Year to date columbus-->

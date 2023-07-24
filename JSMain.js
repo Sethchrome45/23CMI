@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
     //Columbus
     //Year to date
     var colytd1DE = parseInt($("#colytd1DE").val());

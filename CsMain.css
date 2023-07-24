@@ -1,7 +1,8 @@
         #Main-Splash {
-            background-image: url('Images/flint.png');
-            margin-top: -40px;
-            height: 140px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.449), rgba(0, 0, 0, 0.347)), url('Images/allyson-beaucourt-m_uSWBJWr0s-unsplashcut.jpg');
+            background-size: cover;
+            margin-top: -20px;
+            height: 540px;
             margin-left: -8px;
             margin-right: -8px;
         }
@@ -9,11 +10,15 @@
         header h1 {
             font-family: 'Nunito', sans-serif;
             text-transform: uppercase;
-            text-align: center;
-            font-size: 3em;
+            text-align: left;
+            font-size: 2.4em;
             font-stretch: expanded;
             padding-top: 75px;
-            animation: mystretch 3s forwards;
+            padding-left: 10px;
+            margin-top: -520px;
+            color: rgb(255, 255, 255);
+            text-shadow: rgb(0, 0, 0) 5px 1px 10px;
+            animation: mystretch 2s forwards;
         }
         
         header h2 {
@@ -28,99 +33,97 @@
         }
         
         .navbar a:hover {
-            background-color: white;
-            color: black;
+            text-shadow: rgb(255, 255, 255) 1px 5px 30px;
             cursor: default;
-        }
-        
-        .navbar {
-            background-color: gray;
-            height: 25px;
-            margin: -10PX;
-            margin-top: -1px;
-            overflow: hidden;
+            border-top: 2px solid rgb(184, 184, 184);
+            transition: all 200ms ease-out;
+            border-color: rgba(235, 163, 19, 0.637);
         }
         
         .navbar a {
             font-family: 'Nunito', sans-serif;
             text-decoration: solid;
             color: white;
-            font-size: 1.3em;
-            text-align: center;
-            margin-bottom: 5px;
             padding-right: 10px;
             padding-left: 10px;
+            transition: all 1s;
         }
         
-        .navbar #Dent {
-            position: relative;
-            margin-left: 30%;
-        }
-        
-        .navbar #DentEnd {
-            position: relative;
-            margin-right: 10%;
+        .navbar {
+            margin-top: -150px;
+            float: right;
+            margin-right: 5%;
+            word-spacing: 2em;
         }
         
         .Box-charts {
-            margin-top: 15px;
             margin: auto;
+            margin-top: 20px;
             height: 300px;
-            /*border: 1px solid black;*/
             width: 80%;
             position: relative;
         }
         
         #main_body {
-            background-color: rgba(236, 236, 236, 0.974);
-            height: 1100px;
-            margin-top: 10px;
-            margin-left: -8px;
-            margin-right: -8px;
-        }
-        
-        #col_de_main {
-            color: blue;
-            font-size: 120%;
+            height: 1320px;
+            margin-top: 20px;
         }
         
         #Col2022,
         #def2022 {
             position: absolute;
             margin-top: 20px;
-            box-shadow: 0.5px 0.5px 15px rgb(102, 99, 99);
+            box-shadow: 0.5px 1px 15px rgb(158, 158, 158);
             border-radius: 2%;
+        }
+        
+        #col_de_main {
+            color: rgb(77, 77, 77);
+            font-weight: bold;
+            font-size: 120%;
+        }
+        
+        #curr_iss {
+            width: 101%;
+            height: 900px;
+            margin-left: -9px;
+            margin-right: -40px;
         }
         
         #col_overall {
             position: absolute;
-            top: 100px;
-            width: 11%;
+            color: rgb(160, 160, 160);
+            top: 480px;
+            width: 8%;
             padding-left: 1%;
-            margin-left: 4%;
-            border-left: 1px solid rgb(0, 179, 255);
+            padding-right: 0.5%;
+            margin-left: -8%;
+            border-left: 2px solid rgb(10, 176, 206);
             /*box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);*/
         }
         
         #def_overall {
             position: absolute;
-            top: 100px;
-            width: 11%;
-            padding-right: 1%;
-            margin-left: 83%;
-            border-right: 1px solid rgb(68, 144, 73);
+            top: 480px;
+            color: rgb(160, 160, 160);
+            width: 8%;
+            padding-right: 0.5%;
+            padding-left: 0.5%;
+            margin-left: 99%;
+            border-right: 2px solid rgb(97, 143, 11);
             /*box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);*/
         }
         
         #Col2022 {
-            margin-left: 18%;
+            margin-left: 13%;
             width: max-content;
+            box-shadow: 0.5px 0.5px 15px rgb(0, 0, 0);
         }
         
         #def2022 {
-            margin-right: 14%;
-            margin-left: 56%;
+            margin-left: 62%;
             width: max-content;
+            box-shadow: 0.5px 0.5px 15px rgb(0, 0, 0);
         }
         
         #col_title {
@@ -138,58 +141,28 @@
             position: relative;
         }
         
-        #col_y1,
-        #col_y2,
-        #col_y3,
-        #col_y4,
-        #def_y1,
-        #def_y2 {
-            position: absolute;
-            /*border: 1px solid black;*/
-        }
-        
-        #col_y1 {
-            margin-left: 37%;
-        }
-        
-        #col_y2 {
-            margin-left: 25%;
-        }
-        
-        #col_y3 {
-            margin-left: 12%;
-        }
-        
-        #def_y1 {
-            margin-left: 50%;
-        }
-        
-        #def_y2 {
-            margin-left: 62%;
-        }
-        
-        #curr_iss {
-            margin: auto;
-            height: 150px;
-            width: 80%;
-            position: relative;
-            /*border: 1px solid black;*/
-        }
-        
         #col_iss,
         #def_iss {
             position: absolute;
-            margin-top: 30px;
-            height: 600px;
+            margin-top: 40px;
+            height: 800px;
             border: 1px solid rgba(128, 128, 128, 0.5);
-            width: 36%;
-            margin-left: 8%;
+            width: 33%;
+            margin-left: 13%;
+            margin-right: 12%;
             padding: 1em;
-            box-shadow: 0.5px 0.5px 15px rgb(102, 99, 99);
-            border-radius: 1%;
+            box-shadow: 0.5px 0.5px 5px rgb(102, 99, 99);
+            background-color: white;
             /*box-shadow: 0.5px -10px 10px rgb(196, 195, 195);*/
         }
         
         #def_iss {
             margin-left: 52%;
+        }
+        
+        #footer_banner {
+            height: 160px;
+            background-color: rgb(49, 49, 49);
+            margin-left: -8px;
+            margin-right: -8px;
         }

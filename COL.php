@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMI OUTLOOK</title>
-    <link rel="stylesheet" href="CsMain.css">
+   
     <link rel="stylesheet" href="Col.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,31 +26,37 @@
 
     <?php include "connect.php"; ?>
     <?php include "phpfunct.php"; ?>
-    <div id="Main-Splash">
-        <Header>
-            <h1>
-                FLINT GROUP COLOR MATCHING
-            </h1>
-        </Header>
-    </div>
-    <!--Main splash div -->
-    <div class="navbar">
-        <div class="dropdown">
-            <div class="dropdown-content">
-                <a href="Main.php" id="Dent">HOME</a>
-                <a href="#COL.php">COLUMBUS</a>
-                <a href="#">DEFOREST</a>
-                <a href="#">REPORTS</a>
-                <a href="#" id="DentEnd">ABOUT</a>
+    
+    <div id="Main_body">
+
+        <div id="Col_splash">  
+            <Header>
+                <h1>
+                    CMR
+                </h1>
+            </Header>  
+
+            <div id="welcome">
+                Welcome to Columbus!
             </div>
-        </div>
-    </div>
 
+        
+            <div class="navbar">
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <a href="Main.php" id="Dent">HOME</a>
+                        <a href="#COL.php">COLUMBUS</a>
+                        <a href="#">DEFOREST</a>
+                        <a href="#">REPORTS</a>
+                        <a href="#" id="DentEnd">ABOUT</a>
+                    </div>
+                </div>
+            </div>
 
-    <div id="Main-body">
-        <div id="welcome">
-            Welcome to Columbus!
         </div>
+        <!--Main splash div -->
+    
+      
         <div id="Col-charts">
             <div id="Col-DE">
             </div><!--Col-DE div-->
