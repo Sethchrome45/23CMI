@@ -39,9 +39,9 @@
       <div class="navbar">
         <div class="dropdown">
             <div class="dropdown-content">
-                <a href="#home" id="Dent">HOME</a>
+                <a href="Main.php" id="Dent">HOME</a>
                 <a href="COL.php">COLUMBUS</a>
-                <a href="#">DEFOREST</a>
+                <a href="DEF.php">DEFOREST</a>
                 <a href="#">REPORTS</a>
                 <a href="#">ABOUT</a>
             </div>
@@ -114,10 +114,10 @@
 
 
 <!--Year to date deforest-->
-    <input type="hidden" id="defytd1DE" value="<?php echo $defytd1DE; ?>">
-    <input type="hidden" id="defytd2DE" value="<?php echo $defytd2DE; ?>">
-    <input type="hidden" id="defytd3DE" value="<?php echo $defytd3DE; ?>">
-    <input type="hidden" id="defytdOver3DE" value="<?php echo $defytdOver3DE; ?>">
+    <input type="hidden" id="defytd1DE" value="<?php echo $dfytd1DE; ?>">
+    <input type="hidden" id="defytd2DE" value="<?php echo $dfytd2DE; ?>">
+    <input type="hidden" id="defytd3DE" value="<?php echo $dfytd3DE; ?>">
+    <input type="hidden" id="defytdOver3DE" value="<?php echo $dfytdOver3DE; ?>">
 
 </footer>
 </html>

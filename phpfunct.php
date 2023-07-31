@@ -11,59 +11,50 @@
    }
 
    //////////////HOME
- //Columbus current year
+ //-----CURRENT YEAR
+ //Columbus
    $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL < 1";
    $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
    $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM col_curr_yr WHERE FIRST_PULL >= 3";
- //under 1 de col
     $result1 = mysqli_query($con, $ytd1DE);
     $result1 = mysqli_fetch_array($result1);
     $colytd1DE = $result1[0];
- //over 1 less than 2
     $result1 = mysqli_query($con, $ytd2DE);
     $result1 = mysqli_fetch_array($result1);
     $colytd2DE = $result1[0];
- //over 2 less 3
     $result1 = mysqli_query($con,$ytd3DE);
     $result1 = mysqli_fetch_array($result1);
     $colytd3DE = $result1[0];
- // over 3
     $result1 = mysqli_query($con, $ytdOver3DE);
     $result1 = mysqli_fetch_array($result1);
     $colytdOver3DE = $result1[0];
 
+//Deforest
+    $dfytd1DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL < 1";
+    $dfytd2DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
+    $dfytd3DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
+    $dfytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 3";
+    $result1 = mysqli_query($con, $dfytd1DE);
+    $result1 = mysqli_fetch_array($result1);
+    $dfytd1DE = $result1[0];
+    $result1 = mysqli_query($con, $dfytd2DE);
+    $result1 = mysqli_fetch_array($result1);
+    $dfytd2DE = $result1[0];
+    $result1 = mysqli_query($con,$dfytd3DE);
+    $result1 = mysqli_fetch_array($result1);
+    $dfytd3DE = $result1[0];
+    $result1 = mysqli_query($con, $dfytdOver3DE);
+    $result1 = mysqli_fetch_array($result1);
+    $dfytdOver3DE = $result1[0];
 
 
-  //Deforest current year
-    $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL < 1";
-    $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
-    $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
-    $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 3";
- //under 1 de col
-    $result1 = mysqli_query($con, $ytd1DE);
-    $result1 = mysqli_fetch_array($result1);
-    $defytd1DE = $result1[0];
- //over 1 less than 2
-    $result1 = mysqli_query($con, $ytd2DE);
-    $result1 = mysqli_fetch_array($result1);
-    $defytd2DE = $result1[0];
- //over 2 less 3
-    $result1 = mysqli_query($con,$ytd3DE);
-    $result1 = mysqli_fetch_array($result1);
-    $defytd3DE = $result1[0];
- // over 3
-    $result1 = mysqli_query($con, $ytdOver3DE);
-    $result1 = mysqli_fetch_array($result1);
-    $defytdOver3DE = $result1[0];
-
- //TRENDING
- //COLUMBUS
+//-----TRENDING
+ //Columbus
     $coltrend1 = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE())  GROUP BY CAT_A ORDER BY COUNT DESC";
     $coltrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM = WEEK(CURDATE())";
     $result1 = mysqli_query($con, $coltrend1);
     $result1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
- //$result1 = mysqli_fetch_array($result1);
 
     $CAT_A = array();
     $COUNT = array();
@@ -88,18 +79,16 @@
          $trendPcnt = round(($COUNT[0]/$coltrendTtl) * 100,1);
       }
     
-    
- 
- //DEFOREST
-     $deftrend1 = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE()) GROUP BY CAT_A ORDER BY COUNT DESC";
-     $deftrendTtl = "SELECT count(FORM_NUM) FROM col_running_cmi WHERE WK_NUM = WEEK(CURDATE())";
+ //Deforest
+     $deftrend1 = "SELECT CAT_A, count(*) as COUNT FROM def_running_cmi WHERE CAT_A is not null  AND WK_NUM = WEEK(CURDATE()) GROUP BY CAT_A ORDER BY COUNT DESC";
+     $deftrendTtl = "SELECT count(FORM_NUM) FROM def_running_cmi WHERE WK_NUM = WEEK(CURDATE())";
      $result1 = mysqli_query($con, $coltrend1);
      $result1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
 
-   $CAT_A_DEF = array();
-   $COUNT_DEF = array();
-   $CAT_A_DEF = array_fill(0,7,'Nothing yet!');
-   $COUNT_DEF = aRray_fill(0,7,0);
+     $CAT_A_DEF = array();
+     $COUNT_DEF = array();
+     $CAT_A_DEF = array_fill(0,7,'Nothing yet!');
+     $COUNT_DEF = aRray_fill(0,7,0);
 
    $i = 0;
    foreach ($result1 as $row) {
@@ -113,26 +102,15 @@
    $result2 = mysqli_fetch_array($result2);
    $deftrendTtl = $result2[0];
 
-   if ($coltrendTtl == 0) {
+   if ($deftrendTtl == 0) {
       $trendPcntDf = 0;
     }else {
       $trendPcntDf = round(($COUNT_DEF[0]/$deftrendTtl) * 100,1);
       }
     
-   
 
-
-
-
-
-
-
-
-
-
-
-
- //year in history 3de
+ //-----YEAR IN HISTORY 3de
+ //Columbus
    $yr4_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2019 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
    $yr3_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2020 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
    $yr2_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2021 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
@@ -183,8 +161,67 @@
    $yr1_in_H = round(($yr1_in_H / $yr1_ttl) * 100, 2);
    $yr_curr = round(($yr_curr / $curr_ttl) * 100, 2);
 
+//Deforest
+   $dfyr4_in_H = "SELECT COUNT(FIRST_PULL) FROM DEF_2019 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
+   $dfyr3_in_H = "SELECT COUNT(FIRST_PULL) FROM DEF_2020 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
+   $dfyr2_in_H = "SELECT COUNT(FIRST_PULL) FROM DEF_2021 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
+   $dfyr1_in_H = "SELECT COUNT(FIRST_PULL) FROM DEF_2022 WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
+   $dfyr_curr = "SELECT COUNT(FIRST_PULL) FROM DEF_curr_yr WHERE FIRST_PULL >= 3 and WEEK_NUM < week(curdate())";
 
-//Week in history
+   $dfyr4_ttl = "SELECT COUNT(FIRST_PULL) FROM DEF_2019 WHERE WEEK_NUM < week(curdate())";
+   $dfyr3_ttl = "SELECT COUNT(FIRST_PULL) FROM DEF_2020 WHERE WEEK_NUM < week(curdate())";
+   $dfyr2_ttl = "SELECT COUNT(FIRST_PULL) FROM DEF_2021 WHERE WEEK_NUM < week(curdate())"; 
+   $dfyr1_ttl = "SELECT COUNT(FIRST_PULL) FROM DEF_2022 WHERE WEEK_NUM < week(curdate())";  
+   $dfcurr_ttl = "SELECT COUNT(FIRST_PULL) FROM DEF_curr_yr WHERE WEEK_NUM < week(curdate())";
+
+   $result4 = mysqli_query($con, $dfyr4_in_H);
+   $result4 = mysqli_fetch_array($result4);
+   $dfyr4_in_H = $result4[0];
+   $result3 = mysqli_query($con, $dfyr3_in_H);
+   $result3 = mysqli_fetch_array($result3);
+   $dfyr3_in_H = $result3[0];
+   $result2 = mysqli_query($con, $dfyr2_in_H);
+   $result2 = mysqli_fetch_array($result2);
+   $dfyr2_in_H = $result2[0];
+   $result1 = mysqli_query($con, $dfyr1_in_H);
+   $result1 = mysqli_fetch_array($result1);
+   $dfyr1_in_H = $result1[0];
+   $result1 = mysqli_query($con, $dfyr_curr);
+   $result1 = mysqli_fetch_array($result1);
+   $dfyr_curr = $result1[0];
+
+   $result4 = mysqli_query($con, $dfyr4_ttl);
+   $result4 = mysqli_fetch_array($result4);
+   $dfyr4_ttl = $result4[0];
+   $result3 = mysqli_query($con, $dfyr3_ttl);
+   $result3 = mysqli_fetch_array($result3);
+   $dfyr3_ttl = $result3[0];
+   $result2 = mysqli_query($con, $dfyr2_ttl);
+   $result2 = mysqli_fetch_array($result2);
+   $dfyr2_ttl = $result2[0];
+   $result1 = mysqli_query($con, $dfyr1_ttl);
+   $result1 = mysqli_fetch_array($result1);
+   $dfyr1_ttl = $result1[0];
+   $result1 = mysqli_query($con, $dfcurr_ttl);
+   $result1 = mysqli_fetch_array($result1);
+   $dfcurr_ttl = $result1[0];
+
+   $dfyr4_in_H = round(($dfyr4_in_H / $dfyr4_ttl) * 100, 2);
+   $dfyr3_in_H = round(($dfyr3_in_H / $dfyr3_ttl) * 100, 2);
+   $dfyr2_in_H = round(($dfyr2_in_H / $dfyr2_ttl) * 100, 2);
+   $dfyr1_in_H = round(($dfyr1_in_H / $dfyr1_ttl) * 100, 2);
+   $dfyr_curr = round(($dfyr_curr / $dfcurr_ttl) * 100, 2);
+
+
+
+
+
+
+
+
+
+//-----WEEK IN HISTORY
+//Columbus
    $wkyr4_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2019 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
    $wkyr3_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2020 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
    $wkyr2_in_H = "SELECT COUNT(FIRST_PULL) FROM COL_2021 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
@@ -239,7 +276,65 @@
       $wk_curr = round(($wk_curr / $wk_ttl) * 100, 2);
    }
 
-   //Flex chart
+//Deforest
+   $dfwkyr4_in_H = "SELECT COUNT(FIRST_PULL) FROM DEF_2019 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
+   $dfwkyr3_in_H = "SELECT COUNT(FIRST_PULL) FROM DEF_2020 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
+   $dfwkyr2_in_H = "SELECT COUNT(FIRST_PULL) FROM DEF_2021 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
+   $dfwkyr1_in_H = "SELECT COUNT(FIRST_PULL) FROM DEF_2022 WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
+   $dfwk_curr = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE FIRST_PULL >= 3 and WEEK_NUM = week(curdate()) - 1";
+
+   $dfwkyr4_ttl = "SELECT COUNT(FIRST_PULL) FROM DEF_2019 WHERE WEEK_NUM = week(curdate()) - 1";
+   $dfwkyr3_ttl = "SELECT COUNT(FIRST_PULL) FROM DEF_2020 WHERE WEEK_NUM = week(curdate()) - 1";
+   $dfwkyr2_ttl = "SELECT COUNT(FIRST_PULL) FROM DEF_2021 WHERE WEEK_NUM = week(curdate()) - 1"; 
+   $dfwkyr1_ttl = "SELECT COUNT(FIRST_PULL) FROM DEF_2022 WHERE WEEK_NUM = week(curdate()) - 1";  
+   $dfwk_ttl = "SELECT COUNT(FIRST_PULL) FROM def_curr_yr WHERE WEEK_NUM = week(curdate()) - 1";
+
+   $result4 = mysqli_query($con, $dfwkyr4_in_H);
+   $result4 = mysqli_fetch_array($result4);
+   $dfwkyr4_in_H = $result4[0];
+   $result3 = mysqli_query($con, $dfwkyr3_in_H);
+   $result3 = mysqli_fetch_array($result3);
+   $dfwkyr3_in_H = $result3[0];
+   $result2 = mysqli_query($con, $dfwkyr2_in_H);
+   $result2 = mysqli_fetch_array($result2);
+   $dfwkyr2_in_H = $result2[0];
+   $result1 = mysqli_query($con, $dfwkyr1_in_H);
+   $result1 = mysqli_fetch_array($result1);
+   $dfwkyr1_in_H = $result1[0];
+   $result1 = mysqli_query($con, $dfwk_curr);
+   $result1 = mysqli_fetch_array($result1);
+   $dfwk_curr = $result1[0];
+
+   $result4 = mysqli_query($con, $dfwkyr4_ttl);
+   $result4 = mysqli_fetch_array($result4);
+   $dfwkyr4_ttl = $result4[0];
+   $result3 = mysqli_query($con, $dfwkyr3_ttl);
+   $result3 = mysqli_fetch_array($result3);
+   $dfwkyr3_ttl = $result3[0];
+   $result2 = mysqli_query($con, $dfwkyr2_ttl);
+   $result2 = mysqli_fetch_array($result2);
+   $dfwkyr2_ttl = $result2[0];
+   $result1 = mysqli_query($con, $dfwkyr1_ttl);
+   $result1 = mysqli_fetch_array($result1);
+   $dfwkyr1_ttl = $result1[0];
+   $result1 = mysqli_query($con, $dfwk_ttl);
+   $result1 = mysqli_fetch_array($result1);
+   $dfwk_ttl = $result1[0];
+
+   $dfwkyr4_in_H = round(($dfwkyr4_in_H / $dfwkyr4_ttl) * 100, 2);
+   $dfwkyr3_in_H = round(($dfwkyr3_in_H / $dfwkyr3_ttl) * 100, 2);
+   $dfwkyr2_in_H = round(($dfwkyr2_in_H / $dfwkyr2_ttl) * 100, 2);
+   $dfwkyr1_in_H = round(($dfwkyr1_in_H / $dfwkyr1_ttl) * 100, 2);
+   if($dfwk_curr == 0){
+      $dfwk_curr = 0;
+   } else {
+      $dfwk_curr = round(($dfwk_curr / $dfwk_ttl) * 100, 2);
+   }
+
+
+
+//-----FLEX CHART (YEAR TO DATE CATEGORES)
+//Columbus
    $colflex = "SELECT CAT_A, count(*) as COUNT FROM col_running_cmi where CAT_A IS NOT NULL GROUP BY CAT_A ORDER BY COUNT DESC LIMIT 3";
    $colflexTtl = "SELECT ID FROM col_running_cmi order by ID DESC LIMIT 1";
    $result1 = mysqli_query($con, $colflex);
@@ -267,73 +362,90 @@
    $colflexCount[2] = round(($colflexCount[2] / $colflexTtl) * 100, 2);
 
 
+//Deforest
+   $dfflex = "SELECT CAT_A, count(*) as COUNT FROM def_running_cmi where CAT_A IS NOT NULL GROUP BY CAT_A ORDER BY COUNT DESC LIMIT 3";
+   $dfflexTtl = "SELECT ID FROM def_running_cmi order by ID DESC LIMIT 1";
+   $result1 = mysqli_query($con, $dfflex);
+   $result1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
+
+   $result2 = mysqli_query($con, $dfflexTtl);
+   $result2 = mysqli_fetch_array($result2);
+   $dfflexTtl = $result2[0];
+
+   $dfflex = array();
+   $dfflexCount = array();
+   $dfflex = array_fill(0,3,'Nothing yet!');
+   $dfflexCount = array_fill(0,3,0);
+
+   $i = 0;
+   foreach ($result1 as $row) {
+      $dfflex[$i] = $row["CAT_A"];
+      $dfflexCount[$i]=$row["COUNT"];
+      $i++;
+   }
+
+   $dfflexCount[0] = round(($dfflexCount[0] / $dfflexTtl) * 100, 2);
+   $dfflexCount[1] = round(($dfflexCount[1] / $dfflexTtl) * 100, 2);
+   $dfflexCount[2] = round(($dfflexCount[2] / $dfflexTtl) * 100, 2);
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   //Deforest
-   $ytd1DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL < 1";
-   $ytd2DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 1 AND FIRST_PULL < 2";
-   $ytd3DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 2 AND FIRST_PULL < 3";
-   $ytdOver3DE = "SELECT COUNT(FIRST_PULL) FROM COL_2023 WHERE FIRST_PULL >= 3";
-
-
-
-//grabbing Columbus this week  
+//-----CURRENT WEEK DE
+//Columbus 
     $currwk1DE = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL < 1";
     $currwk2DE = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
     $currwk3DE = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
     $currwkOver3 = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 3";
     $currwkTotal = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate())";
- //under 1 de col
     $result1 = mysqli_query($con, $currwk1DE);
     $result1 = mysqli_fetch_array($result1);
     $currwk1DE = $result1[0];
-//over 1 less than 2
     $result1 = mysqli_query($con, $currwk2DE);
     $result1 = mysqli_fetch_array($result1);
     $currwk2DE = $result1[0];
-//over 2 less 3
     $result1 = mysqli_query($con, $currwk3DE);
     $result1 = mysqli_fetch_array($result1);
     $currwk3DE = $result1[0];
- // over 3
     $result1 = mysqli_query($con, $currwkOver3);
     $result1 = mysqli_fetch_array($result1);
     $currwkOver3 = $result1[0];
-//total
     $result1 = mysqli_query($con, $currwkTotal);
     $result1 = mysqli_fetch_array($result1);
     $currwkTotal = $result1[0];
 
+//Deforest
+   $dfcurrwk1DE = "SELECT COUNT(FIRST_PULL) FROM def_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL < 1";
+   $dfcurrwk2DE = "SELECT COUNT(FIRST_PULL) FROM def_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
+   $dfcurrwk3DE = "SELECT COUNT(FIRST_PULL) FROM def_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
+   $dfcurrwkOver3 = "SELECT COUNT(FIRST_PULL) FROM def_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 3";
+   $dfcurrwkTotal = "SELECT COUNT(FIRST_PULL) FROM def_running_cmi WHERE WK_NUM = week(curdate())";
+   $result1 = mysqli_query($con, $dfcurrwk1DE);
+   $result1 = mysqli_fetch_array($result1);
+   $dfcurrwk1DE = $result1[0];
+   $result1 = mysqli_query($con, $dfcurrwk2DE);
+   $result1 = mysqli_fetch_array($result1);
+   $dfcurrwk2DE = $result1[0];
+   $result1 = mysqli_query($con, $dfcurrwk3DE);
+   $result1 = mysqli_fetch_array($result1);
+   $dfcurrwk3DE = $result1[0];
+   $result1 = mysqli_query($con, $dfcurrwkOver3);
+   $result1 = mysqli_fetch_array($result1);
+   $dfcurrwkOver3 = $result1[0];
+   $result1 = mysqli_query($con, $dfcurrwkTotal);
+   $result1 = mysqli_fetch_array($result1);
+   $dfcurrwkTotal = $result1[0];
 
-   // grabbing this week's categories data
+
+
+
+
+
+
+
+/*
+// grabbing this week's categories data
    $colQc = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND CAT_A = 'QC'";
    $colPress = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 1 AND FIRST_PULL < 2";
    $colStandard = "SELECT COUNT(FIRST_PULL) FROM col_running_cmi WHERE WK_NUM = week(curdate()) AND FIRST_PULL >= 2 AND FIRST_PULL < 3";
@@ -735,6 +847,7 @@ $avgs=$cmi_avg18m."  |  ".$cmi_avg12m."  |  ".$cmi_avg6m."  |  ".$cmi_avg3m;
    mysqli_close($con);
 
 }
+*/
 //problem category A
    $cata="SELECT DISTINCT CAT_A FROM CATEGORIES";
    $cata_result = mysqli_query($con,$cata);

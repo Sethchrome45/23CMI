@@ -1,5 +1,5 @@
-#Col_splash {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.449), rgba(0, 0, 0, 0.347)), url('Images/hector-j-rivas-1FxMET2U5dU-unsplash.jpg');
+#Def_splash {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.449), rgba(0, 0, 0, 0.347)), url('Images/defBack.jpg');
     background-size: cover;
     margin-top: -30px;
     height: 270px;
@@ -60,10 +60,10 @@ header h1 {
     text-align: center;
     font-size: 2.4em;
     font-family: 'Nunito', sans-serif;
-    color: rgb(0, 170, 204);
+    color: rgb(0, 204, 41);
     text-shadow: rgb(129, 129, 129) 10px 1px 10px;
     animation-name: welcome;
-    animation-duration: 1.5s;
+    animation-duration: 1.7s;
 }
 
 @keyframes welcome {
@@ -71,11 +71,11 @@ header h1 {
         color: rgba(255, 255, 255, 0);
     }
     to {
-        color: rgb(0, 170, 204);
+        color: rgb(0, 204, 41);
     }
 }
 
-#Col-charts {
+#Def-charts {
     position: relative;
     top: -30px;
     width: 80%;
@@ -84,7 +84,7 @@ header h1 {
     margin-left: 8%;
 }
 
-#Col-DE {
+#Def-DE {
     position: absolute;
     background-color: rgb(255, 255, 255);
     width: 26%;
@@ -92,14 +92,14 @@ header h1 {
     box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
 }
 
-#Col-prob {
+#Def-prob {
     position: absolute;
     margin-left: 31%;
     width: 62%;
     box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
 }
 
-#past_charts {
+#dfpast_charts {
     position: relative;
     top: 500px;
     width: 75%;
@@ -108,27 +108,27 @@ header h1 {
     margin-left: 6%;
 }
 
-#col_y1,
-#col_y2,
-#col_y3,
-#col_y4 {
+#def_y1,
+#def_y2,
+#def_y3,
+#def_y4 {
     position: absolute;
     width: 14%;
 }
 
-#col_y3 {
+#def_y3 {
     padding-left: 25%;
 }
 
-#col_y2 {
+#def_y2 {
     padding-left: 49%;
 }
 
-#col_y1 {
+#def_y1 {
     margin-left: 75%;
 }
 
-#yr_in_H {
+#dfyr_in_H {
     position: absolute;
     margin-top: 250px;
     margin-left: 31%;
@@ -136,7 +136,7 @@ header h1 {
     box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
 }
 
-#wk_in_H {
+#dfwk_in_H {
     position: absolute;
     margin-top: 250px;
     margin-left: 52%;
@@ -144,7 +144,7 @@ header h1 {
     box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
 }
 
-#flex_chart {
+#dfflex_chart {
     position: absolute;
     margin-top: 250px;
     margin-left: 73%;
@@ -152,8 +152,8 @@ header h1 {
     box-shadow: 0.5px 0.5px 15px rgb(209, 209, 209);
 }
 
-#Col-entry,
-#Col-report {
+#Def-entry,
+#Def-report {
     position: relative;
     padding: 10px 25px;
     font-family: 'Nunito', sans-serif;
@@ -165,34 +165,34 @@ header h1 {
     top: -10px;
 }
 
-#Col-report {
+#Def-report {
     position: relative;
     margin-left: 9%;
     top: -54px;
 }
 
-#Col-entry:hover,
-#Col-report:hover {
+#Def-entry:hover,
+#Def-report:hover {
     background-color: rgb(8, 152, 205);
     color: white;
 }
 
-#Col-report {
+#Def-report {
     margin-left: 51%;
 }
 
-#Col-entry {
+#Def-entry {
     margin-left: 42%;
 }
 
-#Col-probLW,
-#Col-DELW {
+#Def-probLW,
+#Def-DELW {
     position: absolute;
     top: 270px;
     border: 1px solid black;
 }
 
-#Col-probLW {
+#Def-probLW {
     margin-left: 21%;
 }
 

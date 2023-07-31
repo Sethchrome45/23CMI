@@ -46,7 +46,7 @@
                     <div class="dropdown-content">
                         <a href="Main.php" id="Dent">HOME</a>
                         <a href="#COL.php">COLUMBUS</a>
-                        <a href="#">DEFOREST</a>
+                        <a href="DEF.php">DEFOREST</a>
                         <a href="#">REPORTS</a>
                         <a href="#" id="DentEnd">ABOUT</a>
                     </div>
@@ -106,6 +106,9 @@
 
 </body>
 <footer>
+    <div id="footer_banner"></div><!--Footer banner div-->
+
+
 
 <!--passing variables from php to jquery for now-->
 <!--current week outlook charts-->
@@ -114,7 +117,7 @@
     <input type="hidden" id="currwk3DE" value = "<?php echo $currwk3DE; ?>">
     <input type="hidden" id="currwkOv3" value = "<?php echo $currwkOver3; ?>">
     <input type="hidden" id="currwkTotal" value = "<?php echo $currwkTotal; ?>">
-<!--categories for this week-->
+<!--Treding for this week -->
     <input type="hidden" id="catA1" value = "<?php echo $CAT_A[0]; ?>">
     <input type="hidden" id="catA2" value = "<?php echo $CAT_A[1]; ?>">
     <input type="hidden" id="catA3" value = "<?php echo $CAT_A[2]; ?>">

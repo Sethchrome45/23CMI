@@ -2,55 +2,55 @@ $(document).ready(function() {
 
 
     //current week columbus
-    var currwk1DE = parseInt($("#currwk1DE").val());
-    var currwk2DE = parseInt($("#currwk2DE").val());
-    var currwk3DE = parseInt($("#currwk3DE").val());
-    var currwkOv3 = parseInt($("#currwkOv3").val());
-    var currwkTotal = parseInt($("#currwkTotal").val());
+    var dfcurrwk1DE = parseInt($("#dfcurrwk1DE").val());
+    var dfcurrwk2DE = parseInt($("#dfcurrwk2DE").val());
+    var dfcurrwk3DE = parseInt($("#dfcurrwk3DE").val());
+    var dfcurrwkOv3 = parseInt($("#dfcurrwkOv3").val());
+    var dfcurrwkTotal = parseInt($("#dfcurrwkTotal").val());
 
     //current week categories
-    var catA1 = $("#catA1").val();
-    var catA2 = $("#catA2").val();
-    var catA3 = $("#catA3").val();
-    var catA4 = $("#catA4").val();
-    var catA5 = $("#catA5").val();
-    var catA6 = $("#catA6").val();
-    var catA7 = $("#catA7").val();
+    var dfcatA1 = $("#dfcatA1").val();
+    var dfcatA2 = $("#dfcatA2").val();
+    var dfcatA3 = $("#dfcatA3").val();
+    var dfcatA4 = $("#dfcatA4").val();
+    var dfcatA5 = $("#dfcatA5").val();
+    var dfcatA6 = $("#dfcatA6").val();
+    var dfcatA7 = $("#dfcatA7").val();
 
 
     //current week category values
-    var countA1 = parseInt($("#countA1").val());
-    var countA2 = parseInt($("#countA2").val());
-    var countA3 = parseInt($("#countA3").val());
-    var countA4 = parseInt($("#countA4").val());
-    var countA5 = parseInt($("#countA5").val());
-    var countA6 = parseInt($("#countA6").val());
-    var countA7 = parseInt($("#countA7").val());
+    var dfcountA1 = parseInt($("#dfcountA1").val());
+    var dfcountA2 = parseInt($("#dfcountA2").val());
+    var dfcountA3 = parseInt($("#dfcountA3").val());
+    var dfcountA4 = parseInt($("#dfcountA4").val());
+    var dfcountA5 = parseInt($("#dfcountA5").val());
+    var dfcountA6 = parseInt($("#dfcountA6").val());
+    var dfcountA7 = parseInt($("#dfcountA7").val());
 
     //Year in history values
-    var yr_curr = parseFloat($("#yr_curr").val());
-    var yr1_in_H = parseFloat($("#yr1_in_H").val());
-    var yr2_in_H = parseFloat($("#yr2_in_H").val());
-    var yr3_in_H = parseFloat($("#yr3_in_H").val());
-    var yr4_in_H = parseFloat($("#yr4_in_H").val());
+    var dfyr_curr = parseFloat($("#dfyr_curr").val());
+    var dfyr1_in_H = parseFloat($("#dfyr1_in_H").val());
+    var dfyr2_in_H = parseFloat($("#dfyr2_in_H").val());
+    var dfyr3_in_H = parseFloat($("#dfyr3_in_H").val());
+    var dfyr4_in_H = parseFloat($("#dfyr4_in_H").val());
 
     //Week in history values
-    var wk_curr = parseFloat($("#wk_curr").val());
-    var wkyr1_in_H = parseFloat($("#wkyr1_in_H").val());
-    var wkyr2_in_H = parseFloat($("#wkyr2_in_H").val());
-    var wkyr3_in_H = parseFloat($("#wkyr3_in_H").val());
-    var wkyr4_in_H = parseFloat($("#wkyr4_in_H").val());
+    var dfwk_curr = parseFloat($("#dfwk_curr").val());
+    var dfwkyr1_in_H = parseFloat($("#dfwkyr1_in_H").val());
+    var dfwkyr2_in_H = parseFloat($("#dfwkyr2_in_H").val());
+    var dfwkyr3_in_H = parseFloat($("#dfwkyr3_in_H").val());
+    var dfwkyr4_in_H = parseFloat($("#dfwkyr4_in_H").val());
 
     //flex chart - categories
-    var colflex1 = $("#colflex1").val();
-    var colflex2 = $("#colflex2").val();
-    var colflex3 = $("#colflex3").val();
+    var dfflex1 = $("#dfflex1").val();
+    var dfflex2 = $("#dfflex2").val();
+    var dfflex3 = $("#dfflex3").val();
 
 
     //flex chart - values
-    var colflexCt1 = parseFloat($("#colflexCt1").val());
-    var colflexCt2 = parseFloat($("#colflexCt2").val());
-    var colflexCt3 = parseFloat($("#colflexCt3").val());
+    var dfflexCt1 = parseFloat($("#dfflexCt1").val());
+    var dfflexCt2 = parseFloat($("#dfflexCt2").val());
+    var dfflexCt3 = parseFloat($("#dfflexCt3").val());
 
 
 
@@ -82,17 +82,17 @@ $(document).ready(function() {
     /////////CHARTS
     $(function(MyOthercharts) {
         google.charts.load('current', { 'packages': ['bar'] });
-        google.charts.setOnLoadCallback(drawcurrwkColDE);
+        google.charts.setOnLoadCallback(drawcurrwkdfDE);
         //google.charts.setOnLoadCallback(drawcurrwkColDELW);
         //google.charts.setOnLoadCallback(drawColprobLW);
 
-        function drawcurrwkColDE() {
+        function drawcurrwkdfDE() {
             var data = google.visualization.arrayToDataTable([
                 ['Ink DE categories', 'Last Wk', 'Current Wk'],
-                ['0 - 1 DE', 16, 10],
-                ['1 - 2 DE', 27, 39],
-                ['2 - 3 DE', 49, 35],
-                ['> 3 DE', 6, 12],
+                ['0 - 1 DE', 26, 20],
+                ['1 - 2 DE', 67, 59],
+                ['2 - 3 DE', 79, 65],
+                ['> 3 DE', 6, 10],
             ]);
             var view = new google.visualization.DataView(data);
             view.setColumns([0, 1,
@@ -129,12 +129,9 @@ $(document).ready(function() {
 
 
             };
-            var chart = new google.charts.Bar(document.getElementById('Col-DE'));
+            var chart = new google.charts.Bar(document.getElementById('Def-DE'));
             chart.draw(data, google.charts.Bar.convertOptions(options));
         };
-
-
-
 
 
         //probability
@@ -144,13 +141,13 @@ $(document).ready(function() {
         function drawColprob() {
             var data = new google.visualization.arrayToDataTable([
                 ['ISSUE', 'COUNT'],
-                [catA1, countA1],
-                [catA2, countA2],
-                [catA3, countA3],
-                [catA4, countA4],
-                [catA5, countA5],
-                [catA6, countA6],
-                [catA7, countA7]
+                [dfcatA1, dfcountA1],
+                [dfcatA2, dfcountA2],
+                [dfcatA3, dfcountA3],
+                [dfcatA4, dfcountA4],
+                [dfcatA5, dfcountA5],
+                [dfcatA6, dfcountA6],
+                [dfcatA7, dfcountA7]
             ]);
             var view = new google.visualization.DataView(data);
             view.setColumns([0, 1, {
@@ -178,7 +175,7 @@ $(document).ready(function() {
                 chartArea: { right: 10, left: 35, top: 30, width: '60%', height: '75%' },
             };
 
-            var chart = new google.visualization.ColumnChart(document.getElementById('Col-prob'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('Def-prob'));
             chart.draw(view, options);
         };
 
@@ -189,11 +186,11 @@ $(document).ready(function() {
         function drawYearInH() {
             var data = new google.visualization.arrayToDataTable([
                 ['YEAR', '> 3 DE'],
-                ['2019', yr4_in_H],
-                ['2020', yr3_in_H],
-                ['2021', yr2_in_H],
-                ['2022', yr1_in_H],
-                ['2023', yr_curr],
+                ['2019', dfyr4_in_H],
+                ['2020', dfyr3_in_H],
+                ['2021', dfyr2_in_H],
+                ['2022', dfyr1_in_H],
+                ['2023', dfyr_curr],
             ]);
             var view = new google.visualization.DataView(data);
             view.setColumns([0, 1, {
@@ -221,7 +218,7 @@ $(document).ready(function() {
                 chartArea: { right: 10, left: 30, top: 40, width: '60%', height: '65%' },
             };
 
-            var chart = new google.visualization.ColumnChart(document.getElementById('yr_in_H'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('dfyr_in_H'));
             chart.draw(view, options);
         };
 
@@ -233,11 +230,11 @@ $(document).ready(function() {
         function drawWeekInH() {
             var data = new google.visualization.arrayToDataTable([
                 ['YEAR', '> 3 DE'],
-                ['2019', wkyr4_in_H],
-                ['2020', wkyr3_in_H],
-                ['2021', wkyr2_in_H],
-                ['2022', wkyr1_in_H],
-                ['2023', wk_curr],
+                ['2019', dfwkyr4_in_H],
+                ['2020', dfwkyr3_in_H],
+                ['2021', dfwkyr2_in_H],
+                ['2022', dfwkyr1_in_H],
+                ['2023', dfwk_curr],
             ]);
             var view = new google.visualization.DataView(data);
             view.setColumns([0, 1, {
@@ -265,7 +262,7 @@ $(document).ready(function() {
                 chartArea: { right: 10, left: 30, top: 40, width: '60%', height: '65%' },
             };
 
-            var chart = new google.visualization.ColumnChart(document.getElementById('wk_in_H'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('dfwk_in_H'));
             chart.draw(view, options);
         };
         //////flexible chart - use space for other querries
@@ -276,9 +273,9 @@ $(document).ready(function() {
         function drawFlexChart() {
             var data = new google.visualization.arrayToDataTable([
                 ['ISSUE', 'COUNT'],
-                [colflex1, colflexCt1],
-                [colflex2, colflexCt2],
-                [colflex3, colflexCt3],
+                [dfflex1, dfflexCt1],
+                [dfflex2, dfflexCt2],
+                [dfflex3, dfflexCt3],
 
             ]);
             var view = new google.visualization.DataView(data);
@@ -307,7 +304,7 @@ $(document).ready(function() {
                 chartArea: { right: 10, left: 30, top: 40, width: '60%', height: '65%' },
             };
 
-            var chart = new google.visualization.ColumnChart(document.getElementById('flex_chart'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('dfflex_chart'));
             chart.draw(view, options);
         };
 
